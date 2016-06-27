@@ -7,7 +7,8 @@ let channel = socket.channel("hot_code_update", {})
 channel.join()
 
 function loadApp() {
-  let element = window.Demo.init()
+  let demo = new Demo();
+  let element = demo.start()
   let container = document.getElementById("js-container")
   container.innerHTML = ""
   container.appendChild(element)
