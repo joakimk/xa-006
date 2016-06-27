@@ -1,6 +1,3 @@
-# This is intended to be a example of demo using GNU rocket (https://github.com/kusma/rocket)
-# to drive the visuals to be in sync with the music.
-
 class @Demo
   constructor: ->
     # This model is only used on first page load, after that you will
