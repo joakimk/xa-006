@@ -27,7 +27,7 @@ Start the server
   0. If you get a "no process" error in the console, reload the page once.
 0. Then edit [web/static/js/demo.coffee](web/static/js/demo.coffee) and see the changes appear in the browser right away.
 
-## Editing the flow and music sync
+## Editing the music sync
 
 0. Get "GNU rocket" with websocket support (needs QT5)
 0. Go to <http://localhost:4000/?tracker=true>
