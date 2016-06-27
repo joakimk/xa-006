@@ -1,6 +1,6 @@
 # xa-006
 
-A demo made using WebGL.
+A demo made using WebGL for Edison 2016.
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
