@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Javascript live coding workspace</title>
+    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+  </head>
+
+  <body>
+    <%= render @view_module, @view_template, assigns %>
+    <script src="<%= Application.get_env(:livecoding_workspace, :three_js_url) %>"></script>
+    <script src="<%= static_path(@conn, "/js/deps.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/live_update.js") %>"></script>
+    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
+  </body>
+</html>

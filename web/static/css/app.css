@@ -1,0 +1,11 @@
+/* This fixes so that scrollbars are not displayed on windows after updating the client side code using websockets */
+html, body, canvas {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html, body, div, canvas {
+  margin: 0;
+  padding: 0;
+}
