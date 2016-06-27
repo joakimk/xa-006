@@ -14,12 +14,12 @@ function loadApp() {
   container.appendChild(element)
 }
 
-window.liveCodeVersion = 1
+window.codeVersion = 1
 
 channel.on("updated_code", (data) => {
   console.log("Hot updating code...")
 
-  window.liveCodeVersion += 1
+  window.codeVersion += 1
 
   var script = document.createElement("script")
   script.type = "text/javascript"

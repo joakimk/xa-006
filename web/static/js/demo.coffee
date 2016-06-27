@@ -1,5 +1,7 @@
 class @Demo
   constructor: ->
+    @codeVersionAtLoad = window.codeVersion
+
     # This model is only used on first page load, after that you will
     # retain the data from previous versions of the code.
     @defaultModel =
@@ -9,8 +11,8 @@ class @Demo
       rotation:
         x: 0
         y: 0
+
     @model = window.previousModelData or @defaultModel
-    @currentCodeVersion = window.liveCodeVersion
 
     @camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10)
     @renderer = new THREE.CanvasRenderer()
@@ -27,12 +29,11 @@ class @Demo
     @scene = new THREE.Scene()
     @scene.add @mesh
 
-    # Set up syncTracker on first load so it does not break on code updates
-    unless window.syncTracker
-      syncTracker = new DemoSyncTracker()
-      syncTracker.start()
-      window.syncTracker = syncTracker
-    @syncTracker = window.syncTracker
+    # Set up music sync on first load so it does not break on code updates
+    unless window.musicSync
+      window.musicSync = new MusicSync()
+      window.musicSync.start()
+    @musicSync = window.musicSync
 
   start: ->
     @_animate()
@@ -40,7 +41,7 @@ class @Demo
 
   _animate: ->
     # Stop animating if a new live updated code version has arrived
-    return if @currentCodeVersion != window.liveCodeVersion
+    return if @codeVersionAtLoad != window.codeVersion
     requestAnimationFrame => @_animate()
 
     try
@@ -54,7 +55,7 @@ class @Demo
     window.previousModelData = @model
 
   _update: ->
-    data = @syncTracker.update()
+    data = @musicSync.update()
 
     @model.rotation.x = data.rotation.x
     @model.rotation.y = data.rotation.y

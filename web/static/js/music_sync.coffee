@@ -1,6 +1,6 @@
 # This class talks to "GNU rocket", both getting the latest values
 # and updating the tracker based on the current position in the music.
-class @DemoSyncTracker
+class @MusicSync
   constructor: ->
     @bpm = 170
     @rows_per_beat = 8
