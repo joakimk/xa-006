@@ -68,8 +68,6 @@ class @Demo
 
     @model.rotation.x = data.rotation.x
     @model.rotation.y = data.rotation.y
-    #model.camera.z = 2.5
-    #model.camera.z += 1 * delta
     #console.log(model.camera.z)
 
   _render: ->
