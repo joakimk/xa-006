@@ -59,7 +59,6 @@ class @Demo
     catch error
       window.previousModelData = @defaultModel
       console.log error
-      #window.location.reload()
 
     window.previousModelData = @model
 
