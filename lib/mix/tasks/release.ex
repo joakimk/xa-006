@@ -39,7 +39,8 @@ defmodule Mix.Tasks.Release do
         </script>
 
         <script type="text/javascript">
-          element = window.Demo.init()
+          demo = new Demo();
+          element = demo.start();
           container = document.getElementById("js-container")
           container.appendChild(element)
         </script>
