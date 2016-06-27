@@ -13,7 +13,7 @@ class @DemoSyncTracker
     @demoMode = (window.location.href.indexOf("tracker") == -1)
 
     if @demoMode
-      @syncDevice.setConfig rocketXML: "sync.rocket"
+      @syncDevice.setConfig rocketXML: window.rocketXML or "sync.rocket"
     else
       @syncDevice.setConfig socketURL: "ws://#{window.location.hostname}:1339"
 
@@ -31,7 +31,7 @@ class @DemoSyncTracker
     device.on "ready", =>
       @_setUpTracks()
 
-      @audio.src = "/music.ogg"
+      @audio.src = window.musicData or "/music.ogg"
       @audio.load()
       @audio.preload = true
 

@@ -38,11 +38,9 @@ Start the server
 0. Save
 0. Commit the changes made to demo.rocket.
 
-## Exporting the final result to a HTML file
+## Exporting the final result to xa-006.html
 
     mix release
-
-See release.html
 
 ## License
 

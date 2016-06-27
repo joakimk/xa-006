@@ -3,7 +3,7 @@
 /db
 /deps
 /*.ez
-/release.html
+/xa-006.html
 
 # Generated on crash by the VM
 erl_crash.dump

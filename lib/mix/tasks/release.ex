@@ -13,6 +13,9 @@ defmodule Mix.Tasks.Release do
     code = File.read!("priv/static/js/deps.js") <>
            File.read!("priv/static/js/live_update.js")
 
+    sync_data = data_uri("priv/static/sync.rocket", "application/xml")
+    music_data = data_uri("priv/static/music.ogg", "audio/ogg")
+
     page = """
     <!DOCTYPE html>
     <html lang="en">
@@ -30,6 +33,8 @@ defmodule Mix.Tasks.Release do
           #{three_js_code}
         </script>
         <script type="text/javascript">
+          window.rocketXML = "#{sync_data}";
+          window.musicData = "#{music_data}";
           #{code}
         </script>
 
@@ -42,15 +47,16 @@ defmodule Mix.Tasks.Release do
     </html>
     """
 
-    Mix.shell.info "Writing xa-006.html"
+    Mix.shell.info "Writing xa-006.html (#{String.length(page) / 1000 |> round} kb)"
 
-    File.write! "release/xa-006.html", page
-
-    # TODO: make data field for at least the rocket file since it won't load otherwise
-    #File.cp "priv/static/sync.rocket", "release/"
-    #File.cp "priv/static/music.ogg", "release/"
+    File.write! "xa-006.html", page
 
     Mix.shell.info "Done"
+  end
+
+  defp data_uri(path, content_type) do
+    encoded_data = Base.encode64(File.read!(path))
+    "data:#{content_type};base64,#{encoded_data}"
   end
 
   defp get(url) do
