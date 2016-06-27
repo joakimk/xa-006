@@ -8,14 +8,16 @@ This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
 - replace the example music
 
-# Installing
+# Development
+
+## Installing
 
 Before you start, ensure you have Node and Elixir installed. I'm using Elixir 1.3.0 and Node v5.5.0, but other versions will likely work as well.
 
     mix deps.get
     npm install
 
-# Usage
+## Editing code
 
 Start the server
 
@@ -24,12 +26,6 @@ Start the server
 0. Visit <http://localhost:4000>
   0. If you get a "no process" error in the console, reload the page once.
 0. Then edit [web/static/js/demo.coffee](web/static/js/demo.coffee) and see the changes appear in the browser right away.
-
-# Exporting the final result to a HTML file
-
-    mix release
-
-See release.html
 
 ## Editing the flow and music sync
 
@@ -41,6 +37,12 @@ See release.html
 0. Edit
 0. Save
 0. Commit the changes made to demo.rocket.
+
+## Exporting the final result to a HTML file
+
+    mix release
+
+See release.html
 
 ## License
 
