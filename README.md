@@ -32,7 +32,7 @@ Start the server
 0. Get "GNU rocket" with websocket support (needs QT5)
 0. Go to <http://localhost:4000/?tracker=true>
 0. The tracks will appear in the editor.
-0. Load the existing data file from <web/static/assets/demo/demo.rocket>.
+0. Load the existing data file from <web/static/assets/demo.rocket>.
 0. Press space and the demo will run.
 0. Edit
 0. Save

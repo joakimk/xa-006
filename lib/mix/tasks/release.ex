@@ -42,8 +42,14 @@ defmodule Mix.Tasks.Release do
     </html>
     """
 
-    Mix.shell.info "Writing release.html"
-    File.write! "release.html", page
+    Mix.shell.info "Writing xa-006.html"
+
+    File.write! "release/xa-006.html", page
+
+    # TODO: make data field for at least the rocket file since it won't load otherwise
+    #File.cp "priv/static/sync.rocket", "release/"
+    #File.cp "priv/static/music.ogg", "release/"
+
     Mix.shell.info "Done"
   end
 
