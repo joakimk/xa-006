@@ -12,10 +12,14 @@ class @Demo
     @renderer.domElement
 
   _setUpModel: ->
-    # On the first page load all scenes (in _setUpScenes) add initial
-    # data to this model. All data for the current state of the demo
-    # is stored in this model so that we can do live code updates
-    # and retain the current state while doing so.
+    @_setUpDefaultModel()
+    @model = window.previousModelData or @defaultModel
+
+  # On the first page load all scenes (in _setUpScenes) add initial
+  # data to this model. All data for the current state of the demo
+  # is stored in this model so that we can do live code updates
+  # and retain the current state while doing so.
+  _setUpDefaultModel: ->
     aspectRatio = 16 / 9
 
     # set up width and height according to aspect ratio
@@ -34,8 +38,6 @@ class @Demo
         aspectRatio: aspectRatio
         width: width
         height: height
-
-    @model = window.previousModelData or @defaultModel
 
   _setUpScenes: ->
     @scenes = [
