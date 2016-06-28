@@ -79,5 +79,3 @@ class @Demo
 
   _render: ->
     scene.render(@renderer) for scene in @scenes
-
-    @renderer.domElement
