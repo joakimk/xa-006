@@ -3,8 +3,8 @@ class @Demo
     @codeVersionAtLoad = window.codeVersion
 
     @_setUpModel()
+    @_setUpScenes()
     @_setUpRendering()
-    @_setUpScene()
     @_setUpMusicSync()
 
   start: ->
@@ -12,40 +12,29 @@ class @Demo
     @renderer.domElement
 
   _setUpModel: ->
-    # This model is only used on first page load, after that you will
-    # retain the data from previous versions of the code.
-    @defaultModel =
-      camera:
-        z: 2.5
-
-      rotation:
-        x: 0
-        y: 0
+    # On the first page load all scenes (in _setUpScenes) add initial
+    # data to this model. All data for the current state of the demo
+    # is stored in this model so that we can do live code updates
+    # and retain the current state while doing so.
+    @defaultModel = {}
 
     @model = window.previousModelData or @defaultModel
 
+  _setUpScenes: ->
+    @scenes = [
+      new IntroScene(@model)
+    ]
+
   _setUpRendering: ->
-    @camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10)
-    @renderer = new THREE.CanvasRenderer()
+    @renderer = new THREE.WebGLRenderer()
     @renderer.setSize window.innerWidth, window.innerHeight
-
-  _setUpScene: ->
-    geometry = new THREE.CubeGeometry(1, 1, 1)
-    material = new THREE.MeshBasicMaterial(
-      color: 0x224444
-      wireframe: true
-      wireframeLinewidth: 20
-    )
-    @mesh = new THREE.Mesh(geometry, material)
-
-    @scene = new THREE.Scene()
-    @scene.add @mesh
 
   _setUpMusicSync: ->
     # Set up music sync on first load so it does not break on code updates
     unless window.musicSync
       window.musicSync = new MusicSync()
       window.musicSync.start()
+
     @musicSync = window.musicSync
 
   _animate: ->
@@ -58,20 +47,18 @@ class @Demo
       @_render()
     catch error
       window.previousModelData = @defaultModel
+      @_setUpScenes()
       console.log error
 
     window.previousModelData = @model
 
   _update: ->
-    data = @musicSync.update()
+    sync = @musicSync.update()
 
-    @model.rotation.x = data.rotation.x
-    @model.rotation.y = data.rotation.y
-    #console.log(model.camera.z)
+    # TODO: only update or render scehens the sync says should be visible
+    scene.update(sync) for scene in @scenes
 
   _render: ->
-    @mesh.rotation.x = @model.rotation.x
-    @mesh.rotation.y = @model.rotation.y
-    @camera.position.z = @model.camera.z
+    scene.render(@renderer) for scene in @scenes
 
-    @renderer.render @scene, @camera
+    @renderer.domElement
