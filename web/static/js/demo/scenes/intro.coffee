@@ -1,5 +1,5 @@
 class @IntroScene
-  constructor: (rootModel, renderer) ->
+  constructor: (rootModel) ->
     # Starting values, will be updated by "_update" as the demo runs
     rootModel.introScene or=
       camera:
@@ -11,14 +11,14 @@ class @IntroScene
 
     @model = rootModel.introScene
 
-    @_setUpCamera()
+    @_setUpCamera(rootModel.resolution)
     @_setUpScene()
 
-  _setUpCamera: ->
-    @camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10)
+  _setUpCamera: (resolution) ->
+    @camera = new THREE.PerspectiveCamera(75, resolution.aspectRatio, 0.1, 10)
 
   _setUpScene: ->
-    geometry = new THREE.CubeGeometry(1, 1, 1)
+    geometry = new THREE.CubeGeometry(2.5, 2.5, 2.5)
     material = new THREE.MeshBasicMaterial(
       color: 0x224444
       wireframe: true

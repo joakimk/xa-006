@@ -16,7 +16,24 @@ class @Demo
     # data to this model. All data for the current state of the demo
     # is stored in this model so that we can do live code updates
     # and retain the current state while doing so.
-    @defaultModel = {}
+    aspectRatio = 16 / 9
+
+    # set up width and height according to aspect ratio
+    width = window.innerWidth
+    height = (window.innerWidth / aspectRatio)
+
+    # scale to fit window and add some borders to make the edges more clear
+    usedHeight = window.innerHeight - 50
+    if usedHeight < height
+      scaling = usedHeight / height
+      width = width * scaling
+      height = height * scaling
+
+    @defaultModel =
+      resolution:
+        aspectRatio: aspectRatio
+        width: width
+        height: height
 
     @model = window.previousModelData or @defaultModel
 
@@ -27,7 +44,7 @@ class @Demo
 
   _setUpRendering: ->
     @renderer = new THREE.WebGLRenderer()
-    @renderer.setSize window.innerWidth, window.innerHeight
+    @renderer.setSize @model.resolution.width, @model.resolution.height
 
   _setUpMusicSync: ->
     # Set up music sync on first load so it does not break on code updates
