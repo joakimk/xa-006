@@ -74,7 +74,7 @@ class @Demo
   _update: ->
     sync = @musicSync.update()
 
-    # TODO: only update or render scehens the sync says should be visible
+    # TODO: only update or render scenes the sync says should be visible
     scene.update(sync) for scene in @scenes
 
   _render: ->
