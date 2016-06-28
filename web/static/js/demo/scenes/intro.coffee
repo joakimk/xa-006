@@ -1,6 +1,6 @@
 class @IntroScene
   constructor: (rootModel) ->
-    # Starting values, will be updated by "_update" as the demo runs
+    # Starting values, will be updated by "update" as the demo runs
     rootModel.introScene or=
       camera:
         z: 2.5
