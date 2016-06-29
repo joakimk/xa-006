@@ -1,12 +1,11 @@
 class @IntroScene
-
   constructor: (rootModel) ->
     @fragmentShaderSript =
     """
-    uniform vec2 resolution;
     uniform float time;
+    varying vec2 vUv;
     void main()	{
-    	vec2 p = -1.0 + 2.0 * gl_FragCoord.xy / resolution.xy;
+    	vec2 p = -1.0 + 2.0 * vUv;
     	float a = time*40.0;
     	float d,e,f,g=1.0/40.0,h,i,r,q;
     	e=400.0*(p.x*0.5+0.5);
@@ -33,8 +32,12 @@ class @IntroScene
     """
     @vertexShaderSript =
     """
-    void main()	{
-    	gl_Position = vec4( position, 1.0 );
+    varying vec2 vUv;
+    void main()
+    {
+      vUv = uv;
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+      gl_Position = projectionMatrix * mvPosition;
     }
     """
     # Starting values, will be updated by "update" as the demo runs
@@ -71,8 +74,8 @@ class @IntroScene
     @camera = new THREE.PerspectiveCamera(75, @resolution.aspectRatio, 0.1, 10)
 
   _setUpScene: ->
-    # geometry = new THREE.CubeGeometry(2.5, 2.5, 2.5)
-    geometry = new THREE.PlaneBufferGeometry(2, 2)
+    geometry = new THREE.CubeGeometry(2.5, 2.5, 2.5)
+    # geometry = new THREE.PlaneBufferGeometry(2, 2)
     # material = new THREE.MeshBasicMaterial(
     #   color: 0x224444
     #   wireframe: false
