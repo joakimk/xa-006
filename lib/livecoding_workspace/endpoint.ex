@@ -9,7 +9,7 @@ defmodule LivecodingWorkspace.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/", from: :livecoding_workspace, gzip: false,
-    only: ~w(css fonts images js favicon.ico robots.txt music.mp3 sync.rocket)
+    only: ~w(css fonts images js favicon.ico robots.txt music.ogg sync.rocket)
 
   # Code reloading can be explicitly enabled under the
   # :code_reloader configuration of your endpoint.
