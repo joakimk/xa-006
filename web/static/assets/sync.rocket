@@ -1,32 +1,33 @@
-<sync rows="180">
+<sync rows="500">
 	<tracks>
 		<track name="rotation.x">
-			<key row="0" value="10" interpolation="1"/>
-			<key row="48" value="2" interpolation="1"/>
-			<key row="127" value="1" interpolation="0"/>
+			<key interpolation="1" row="0" value="0"/>
+			<key interpolation="1" row="40" value="2"/>
+			<key interpolation="1" row="88" value="0"/>
+			<key interpolation="1" row="168" value="1"/>
+			<key interpolation="0" row="176" value="0.5"/>
+			<key interpolation="0" row="184" value="1"/>
+			<key interpolation="0" row="192" value="0.5"/>
+			<key interpolation="0" row="200" value="1"/>
+			<key interpolation="1" row="208" value="0.5"/>
+			<key interpolation="0" row="256" value="0"/>
 		</track>
 		<track name="rotation.y">
-			<key row="40" value="2" interpolation="1"/>
-			<key row="48" value="3" interpolation="0"/>
-			<key row="51" value="2" interpolation="0"/>
-			<key row="53" value="4" interpolation="0"/>
-			<key row="55" value="2" interpolation="0"/>
-			<key row="57" value="4" interpolation="0"/>
-			<key row="59" value="0" interpolation="1"/>
-			<key row="64" value="4" interpolation="2"/>
-			<key row="88" value="1" interpolation="0"/>
-			<key row="130" value="2" interpolation="0"/>
-			<key row="131" value="3" interpolation="0"/>
-			<key row="132" value="4" interpolation="0"/>
-			<key row="133" value="5" interpolation="0"/>
-			<key row="144" value="3" interpolation="0"/>
-			<key row="147" value="2" interpolation="0"/>
-			<key row="149" value="4" interpolation="0"/>
-			<key row="151" value="2" interpolation="0"/>
-			<key row="153" value="4" interpolation="0"/>
-			<key row="155" value="0" interpolation="1"/>
-			<key row="160" value="4" interpolation="2"/>
-			<key row="179" value="1" interpolation="0"/>
+			<key interpolation="1" row="24" value="0"/>
+			<key interpolation="1" row="32" value="2.4"/>
+			<key interpolation="0" row="88" value="2"/>
+			<key interpolation="0" row="130" value="4"/>
+			<key interpolation="0" row="136" value="2"/>
+			<key interpolation="0" row="144" value="4"/>
+			<key interpolation="0" row="152" value="2"/>
+			<key interpolation="0" row="160" value="4"/>
+			<key interpolation="0" row="168" value="2"/>
+			<key interpolation="0" row="176" value="4"/>
+			<key interpolation="0" row="184" value="2"/>
+			<key interpolation="0" row="192" value="4"/>
+			<key interpolation="0" row="200" value="2"/>
+			<key interpolation="1" row="208" value="4"/>
+			<key interpolation="0" row="256" value="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>

@@ -2,7 +2,7 @@
 # and updating the tracker based on the current position in the music.
 class @MusicSync
   constructor: ->
-    @bpm = 170
+    @bpm = 140
     @rows_per_beat = 8
     @row_rate = (@bpm / 60) * @rows_per_beat
 
