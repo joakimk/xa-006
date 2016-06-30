@@ -56,6 +56,11 @@ class @MusicSync
 
     unless @audio.paused
       @row = @audio.currentTime * @row_rate
+
+      if @audio.currentTime > 15
+        console.log "This is as far as we've gotten, resetting music to the start"
+        @audio.currentTime = 0
+
       @syncDevice.update(@row)
 
     @data

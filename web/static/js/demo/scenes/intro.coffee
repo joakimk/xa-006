@@ -16,25 +16,29 @@ class @IntroScene
     @_setUpScene()
 
   update: (sync) ->
-    @model.rotation.x = sync.rotation.x
-    @model.rotation.y = sync.rotation.y
+    @model.rotation.x = sync.rotation.x + 1.0
+    @model.rotation.y = sync.rotation.y + 1.0
     #console.log(model.camera.z)
 
   render: (renderer) ->
-    @mesh.rotation.x = @model.rotation.x
-    @mesh.rotation.y = @model.rotation.y
-    @camera.position.z = @model.camera.z
+    @_renderCube(cube) for cube in @cubes
 
+    @camera.position.z = @model.camera.z
     @uniforms.time.value += 0.05
 
     # NOTE: this part might change when we add crossfade between scenes
     renderer.render @scene, @camera
 
+  _renderCube: (cube) ->
+    #window.cube = cube
+    cube.rotation.x = @model.rotation.x
+    cube.rotation.y = @model.rotation.y
+    cube.position.z = (Math.cos(@model.rotation.x) + Math.sin(@model.rotation.y)) * 2
+
   _setUpCamera: ->
-    @camera = new THREE.PerspectiveCamera(75, @resolution.aspectRatio, 0.1, 10)
+    @camera = new THREE.PerspectiveCamera(60, @resolution.aspectRatio, 0.1, 10)
 
   _setUpScene: ->
-    geometry = new THREE.CubeGeometry(2.5, 2.5, 2.5)
     # geometry = new THREE.PlaneBufferGeometry(2, 2)
     # material = new THREE.MeshBasicMaterial(
     #   color: 0x224444
@@ -48,12 +52,34 @@ class @IntroScene
       resolution:
         value: new THREE.Vector2(@resolution.width, @resolution.height)
 
-    material = new THREE.ShaderMaterial(
-	    uniforms: @uniforms
-	    vertexShader: Shaders.labVert
-	    fragmentShader: Shaders.labFrag
-    )
-    @mesh = new THREE.Mesh(geometry, material)
-
+    @cubes = []
     @scene = new THREE.Scene()
-    @scene.add @mesh
+    @_addCube(i, 2.0) for i in [0..43]
+    @_addCube(i, 1.9) for i in [0..43]
+    @_addCube(i, 1.8) for i in [0..43]
+
+    @_addCube(i, 1.2) for i in [0..43]
+    @_addCube(i, 1.1) for i in [0..43]
+    @_addCube(i, 1.0) for i in [0..43]
+
+    @_addCube(i, 0.4) for i in [0..43]
+    @_addCube(i, 0.3) for i in [0..43]
+    @_addCube(i, 0.2) for i in [0..43]
+
+  _addCube: (i, offset) ->
+    geometry = new THREE.CubeGeometry(0.1 * offset, 0.1 * offset, 0.1 * offset)
+
+    material = new THREE.ShaderMaterial(
+      uniforms: @uniforms
+      vertexShader: Shaders.labVert
+      fragmentShader: Shaders.labFrag
+    )
+
+    mesh = new THREE.Mesh(geometry, material)
+
+    mesh.position.x = Math.cos(i) * 2 * offset
+    mesh.position.y = Math.sin(i) * 2 * offset
+    mesh.position.z = offset * 5
+    @cubes.push(mesh)
+
+    @scene.add mesh
