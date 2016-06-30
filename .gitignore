@@ -4,6 +4,7 @@
 /deps
 /*.ez
 /xa-006.html
+/web/static/js/shaders.js
 
 # Generated on crash by the VM
 erl_crash.dump

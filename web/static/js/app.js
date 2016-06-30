@@ -30,3 +30,4 @@ channel.on("updated_code", (data) => {
 })
 
 loadApp()
+
