@@ -31,7 +31,7 @@ class @MusicSync
     device.on "ready", =>
       @_setUpTracks()
 
-      @audio.src = window.musicData or "/music.ogg"
+      @audio.src = window.musicData or "/music.mp3"
       @audio.load()
       @audio.preload = true
 

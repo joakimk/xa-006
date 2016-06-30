@@ -4,10 +4,6 @@ A demo made using WebGL for Edison 2016.
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
-# TODO
-
-- replace the example music
-
 # Development
 
 ## Installing
@@ -41,6 +37,10 @@ Start the server
 ## Exporting the final result to xa-006.html
 
     mix release
+
+## Credits
+
+Music by "Yirsi". https://soundcloud.com/yirsi/unknown-world.
 
 ## License
 
