@@ -11,6 +11,7 @@ class @IntroScene
 
     @model = rootModel.introScene
     @resolution = rootModel.resolution
+    @clock = new THREE.Clock()
 
     @_setUpCamera()
     @_setUpScene()
@@ -24,7 +25,9 @@ class @IntroScene
     @_renderCube(cube) for cube in @cubes
 
     @camera.position.z = @model.camera.z
-    @uniforms.time.value += 0.05
+
+    delta = @clock.getDelta()
+    @uniforms.time.value += 2 * delta
 
     # NOTE: this part might change when we add crossfade between scenes
     renderer.render @scene, @camera
