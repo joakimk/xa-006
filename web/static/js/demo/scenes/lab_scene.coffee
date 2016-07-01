@@ -40,7 +40,7 @@ class @LabScene
     textureLoader = new THREE.TextureLoader()
     #texture = textureLoader.load "textures/FairLight64px.png"
     #texture = textureLoader.load "textures/FairLight.png"
-    texture = textureLoader.load "textures/xA.png"
+    texture = textureLoader.load "textures/xAngle2.png"
     material = new THREE.MeshPhongMaterial(color: 0xffffff, map: texture, transparent: true, opacity: 1)
 
     geometry = new THREE.PlaneBufferGeometry(10, 10)

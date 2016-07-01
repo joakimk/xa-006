@@ -58,11 +58,11 @@
 			<key interpolation="2" row="256" value="-20"/>
 			<key interpolation="2" row="272" value="5"/>
 			<key interpolation="2" row="280" value="-2.5"/>
-			<key interpolation="2" row="288" value="2.5"/>
+			<key interpolation="2" row="288" value="2.3"/>
 			<key interpolation="2" row="296" value="0"/>
 			<key interpolation="2" row="304" value="1"/>
 			<key interpolation="2" row="312" value="0.5"/>
-			<key interpolation="2" row="320" value="10"/>
+			<key interpolation="2" row="320" value="8"/>
 			<key interpolation="2" row="328" value="0"/>
 			<key interpolation="2" row="336" value="1"/>
 			<key interpolation="2" row="344" value="0"/>
@@ -70,7 +70,11 @@
 			<key interpolation="2" row="360" value="0"/>
 			<key interpolation="2" row="368" value="0.5"/>
 			<key interpolation="2" row="376" value="0"/>
-			<key interpolation="0" row="384" value="1"/>
+			<key interpolation="2" row="384" value="7"/>
+			<key interpolation="2" row="392" value="0"/>
+			<key interpolation="2" row="400" value="0.5"/>
+			<key interpolation="2" row="408" value="0"/>
+			<key interpolation="0" row="416" value="0.5"/>
 		</track>
 		<track name="grp1.rotation.x">
 			<key interpolation="0" row="0" value="0"/>
@@ -105,13 +109,16 @@
 		<track name="grp1.position.x">
 			<key interpolation="0" row="0" value="0"/>
 			<key interpolation="0" row="128" value="3.25"/>
-			<key interpolation="0" row="144" value="2.5"/>
+			<key interpolation="1" row="144" value="2.5"/>
+			<key interpolation="0" row="159" value="2.3"/>
 			<key interpolation="1" row="160" value="2"/>
 			<key interpolation="0" row="175" value="2.04"/>
-			<key interpolation="0" row="176" value="-4"/>
-			<key interpolation="0" row="192" value="0"/>
-			<key interpolation="0" row="224" value="4"/>
-			<key interpolation="1" row="248" value="4"/>
+			<key interpolation="1" row="176" value="-4"/>
+			<key interpolation="0" row="191" value="-3.9"/>
+			<key interpolation="1" row="192" value="0"/>
+			<key interpolation="0" row="207" value="-0.2"/>
+			<key interpolation="3" row="224" value="4"/>
+			<key interpolation="3" row="248" value="4.12"/>
 			<key interpolation="0" row="255" value="3.89"/>
 		</track>
 		<track name="grp1.position.y">
@@ -121,7 +128,8 @@
 			<key interpolation="1" row="160" value="-3.2"/>
 			<key interpolation="0" row="175" value="-3.28"/>
 			<key interpolation="0" row="176" value="-3.4"/>
-			<key interpolation="0" row="192" value="-4.3"/>
+			<key interpolation="1" row="192" value="-4.3"/>
+			<key interpolation="0" row="207" value="-4.4"/>
 			<key interpolation="0" row="208" value="2.1"/>
 			<key interpolation="1" row="224" value="2.24"/>
 			<key interpolation="1" row="248" value="2.2"/>
