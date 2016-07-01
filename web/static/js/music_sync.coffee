@@ -57,7 +57,7 @@ class @MusicSync
     unless @audio.paused
       @row = @audio.currentTime * @row_rate
 
-      if @audio.currentTime > 15
+      if @audio.currentTime > 15 and window.location.href.indexOf("reset_music") != -1
         console.log "This is as far as we've gotten, resetting music to the start"
         @audio.currentTime = 0
 
