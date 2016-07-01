@@ -45,7 +45,7 @@ class @Demo
     ]
 
   _setUpRendering: ->
-    @renderer = new THREE.WebGLRenderer()
+    @renderer = new THREE.WebGLRenderer antialias: true
     @renderer.setSize @model.resolution.width, @model.resolution.height
 
   _setUpMusicSync: ->
