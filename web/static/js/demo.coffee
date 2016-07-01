@@ -43,6 +43,7 @@ class @Demo
     @scenes = [
       new IntroScene(@model)
       new LabScene(@model)
+      new BackgroundScene(@model)
     ]
 
   _setUpRendering: ->
