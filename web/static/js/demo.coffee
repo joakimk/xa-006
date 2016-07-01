@@ -73,9 +73,13 @@ class @Demo
 
   _update: ->
     sync = @musicSync.update()
+    @model.activeScenes = sync.activeScenes
 
-    # TODO: only update or render scenes the sync says should be visible
-    scene.update(sync) for scene in @scenes
+    scene.update(sync) for scene in @scenes when @_isActive(scene)
 
   _render: ->
-    scene.render(@renderer) for scene in @scenes
+    scene.render(@renderer) for scene in @scenes when @_isActive(scene)
+
+  _isActive: (scene) ->
+    sceneNumber = @scenes.indexOf(scene) + 1
+    @model.activeScenes.indexOf(sceneNumber) != -1

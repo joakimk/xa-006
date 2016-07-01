@@ -68,8 +68,15 @@ class @MusicSync
   _setUpTracks: ->
     @tracks.rotationX = @syncDevice.getTrack("rotation.x")
     @tracks.rotationY = @syncDevice.getTrack("rotation.y")
+    @tracks.activeSceneA = @syncDevice.getTrack("activeSceneA")
+    @tracks.activeSceneB = @syncDevice.getTrack("activeSceneB")
 
   _getDataForCurrentRow: ->
     rotation:
       x: @tracks.rotationX?.getValue(@row) or 0
       y: @tracks.rotationY?.getValue(@row) or 0
+
+    activeScenes: [
+      @tracks.activeSceneA?.getValue(@row) or 0
+      @tracks.activeSceneB?.getValue(@row) or 0
+    ]
