@@ -19,8 +19,15 @@ class @IntroScene
   update: (sync) ->
     @model.rotation.x = sync.rotation.x + 1.0
     @model.rotation.y = sync.rotation.y + 1.0
-    @group.rotation.z = sync.rotation.z + 1.0
-    @group.position.z = sync.position.z
+    @model.rotation.z = sync.rotation.z + 1.0
+
+    @group1.rotation.x = sync.group1Rotation.x
+    @group1.rotation.y = sync.group1Rotation.y
+    @group1.rotation.z = sync.group1Rotation.z
+
+    @group1.position.x = sync.group1Position.x
+    @group1.position.y = sync.group1Position.y
+    @group1.position.z = sync.group1Position.z
     #console.log(model.camera.z)
 
   render: (renderer) ->
@@ -59,7 +66,7 @@ class @IntroScene
 
     @cubes = []
     @scene = new THREE.Scene()
-    @group = new THREE.Group()
+    @group1 = new THREE.Group()
     @_addCube(i, 2.0) for i in [0..43]
     @_addCube(i, 1.9) for i in [0..43]
     @_addCube(i, 1.8) for i in [0..43]
@@ -71,7 +78,7 @@ class @IntroScene
     @_addCube(i, 0.4) for i in [0..43]
     @_addCube(i, 0.3) for i in [0..43]
     @_addCube(i, 0.2) for i in [0..43]
-    @scene.add @group
+    @scene.add @group1
 
   _addCube: (i, offset) ->
     geometry = new THREE.CubeGeometry(0.1 * offset, 0.1 * offset, 0.1 * offset)
@@ -89,4 +96,4 @@ class @IntroScene
     mesh.position.z = offset * 5
     @cubes.push(mesh)
 
-    @group.add mesh
+    @group1.add mesh

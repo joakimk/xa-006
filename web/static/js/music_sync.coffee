@@ -69,7 +69,15 @@ class @MusicSync
     @tracks.rotationX = @syncDevice.getTrack("rotation.x")
     @tracks.rotationY = @syncDevice.getTrack("rotation.y")
     @tracks.rotationZ = @syncDevice.getTrack("rotation.z")
-    @tracks.positionZ = @syncDevice.getTrack("position.z")
+
+    @tracks.group1RotationX = @syncDevice.getTrack("grp1.rotation.x")
+    @tracks.group1RotationY = @syncDevice.getTrack("grp1.rotation.y")
+    @tracks.group1RotationZ = @syncDevice.getTrack("grp1.rotation.z")
+
+    @tracks.group1PositionX = @syncDevice.getTrack("grp1.position.x")
+    @tracks.group1PositionY = @syncDevice.getTrack("grp1.position.y")
+    @tracks.group1PositionZ = @syncDevice.getTrack("grp1.position.z")
+
     @tracks.activeSceneA = @syncDevice.getTrack("activeSceneA")
     @tracks.activeSceneB = @syncDevice.getTrack("activeSceneB")
 
@@ -78,8 +86,14 @@ class @MusicSync
       x: @tracks.rotationX?.getValue(@row) or 0
       y: @tracks.rotationY?.getValue(@row) or 0
       z: @tracks.rotationZ?.getValue(@row) or 0
-    position:
-      z: @tracks.positionZ?.getValue(@row) or 0
+    group1Rotation:
+      x: @tracks.group1RotationX?.getValue(@row) or 0
+      y: @tracks.group1RotationY?.getValue(@row) or 0
+      z: @tracks.group1RotationZ?.getValue(@row) or 0
+    group1Position:
+      x: @tracks.group1PositionX?.getValue(@row) or 0
+      y: @tracks.group1PositionY?.getValue(@row) or 0
+      z: @tracks.group1PositionZ?.getValue(@row) or 0
 
     activeScenes: [
       @tracks.activeSceneA?.getValue(@row) or 0
