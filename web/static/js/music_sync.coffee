@@ -68,6 +68,8 @@ class @MusicSync
   _setUpTracks: ->
     @tracks.rotationX = @syncDevice.getTrack("rotation.x")
     @tracks.rotationY = @syncDevice.getTrack("rotation.y")
+    @tracks.rotationZ = @syncDevice.getTrack("rotation.z")
+    @tracks.positionZ = @syncDevice.getTrack("position.z")
     @tracks.activeSceneA = @syncDevice.getTrack("activeSceneA")
     @tracks.activeSceneB = @syncDevice.getTrack("activeSceneB")
 
@@ -75,6 +77,9 @@ class @MusicSync
     rotation:
       x: @tracks.rotationX?.getValue(@row) or 0
       y: @tracks.rotationY?.getValue(@row) or 0
+      z: @tracks.rotationZ?.getValue(@row) or 0
+    position:
+      z: @tracks.positionZ?.getValue(@row) or 0
 
     activeScenes: [
       @tracks.activeSceneA?.getValue(@row) or 0
