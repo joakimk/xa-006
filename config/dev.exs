@@ -14,6 +14,7 @@ config :livecoding_workspace, LivecodingWorkspace.Endpoint,
   watchers: [node: ["node_modules/brunch/bin/brunch", "watch", "--stdin",
                     cd: Path.expand("../", __DIR__)]]
 
+# NOTE: if you change this, also update the cached version in web/static/vendor/js
 config :livecoding_workspace,
   three_js_url: "http://cdnjs.cloudflare.com/ajax/libs/three.js/r78/three.min.js"
 
