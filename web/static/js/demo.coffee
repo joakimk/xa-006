@@ -3,8 +3,8 @@ class @Demo
     @codeVersionAtLoad = window.codeVersion
 
     @_setUpModel()
-    @_setUpScenes()
     @_setUpRendering()
+    @_setUpScenes()
     @_setUpMusicSync()
 
   start: ->
@@ -42,6 +42,7 @@ class @Demo
   _setUpScenes: ->
     @scenes = [
       new IntroScene(@model)
+      new LabScene(@model)
     ]
 
   _setUpRendering: ->
