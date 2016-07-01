@@ -13,7 +13,6 @@
 
   <body>
     <%= render @view_module, @view_template, assigns %>
-    <script src="<%= Application.get_env(:livecoding_workspace, :three_js_url) %>"></script>
     <script src="<%= static_path(@conn, "/js/deps.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/live_update.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
