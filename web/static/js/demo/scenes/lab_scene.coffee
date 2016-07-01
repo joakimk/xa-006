@@ -21,8 +21,9 @@ class @LabScene
 
   _renderImage: (image) ->
     @index -= 1
-    image.rotation.z = @index * (0.01 * @model.rotation.z)
+    image.rotation.z = @index * (Math.cos(@model.rotation.z) * 0.01)
     image.position.z = -@index * (0.03 * @model.rotation.z * 0.1)
+    image.scale.set(1 + -(@index * 0.03) * @model.rotation.z * 0.5, 1 + -(@index * 0.03) * @model.rotation.z * 2.3, 1)
 
   _setUpCamera: ->
     @camera = new THREE.PerspectiveCamera(90, @resolution.aspectRatio, 1, 100)
@@ -37,6 +38,8 @@ class @LabScene
 
   _addImage: (i) ->
     textureLoader = new THREE.TextureLoader()
+    #texture = textureLoader.load "textures/FairLight64px.png"
+    #texture = textureLoader.load "textures/FairLight.png"
     texture = textureLoader.load "textures/xA.png"
     material = new THREE.MeshPhongMaterial(color: 0xffffff, map: texture, transparent: true, opacity: 1)
 

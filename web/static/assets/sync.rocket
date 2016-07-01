@@ -89,13 +89,21 @@
 		</track>
 		<track name="activeSceneB"/>
 		<track name="rotation.z">
-			<key interpolation="1" row="256" value="-50"/>
-			<key interpolation="1" row="280" value="5"/>
-			<key interpolation="1" row="288" value="-2.5"/>
-			<key interpolation="1" row="296" value="2.5"/>
-			<key interpolation="1" row="304" value="-1"/>
-			<key interpolation="1" row="312" value="1"/>
-			<key interpolation="1" row="320" value="0"/>
+			<key interpolation="2" row="256" value="-20"/>
+			<key interpolation="2" row="280" value="5"/>
+			<key interpolation="2" row="288" value="-2.5"/>
+			<key interpolation="2" row="296" value="2.5"/>
+			<key interpolation="2" row="304" value="0"/>
+			<key interpolation="2" row="312" value="1"/>
+			<key interpolation="2" row="320" value="0"/>
+			<key interpolation="2" row="328" value="1"/>
+			<key interpolation="2" row="336" value="0"/>
+			<key interpolation="2" row="344" value="1"/>
+			<key interpolation="2" row="352" value="0"/>
+			<key interpolation="2" row="360" value="1"/>
+			<key interpolation="2" row="368" value="0"/>
+			<key interpolation="2" row="376" value="1"/>
+			<key interpolation="0" row="384" value="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
