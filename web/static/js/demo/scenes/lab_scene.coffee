@@ -48,4 +48,3 @@ class @LabScene
     mesh = new THREE.Mesh(geometry, material)
     @scene.add(mesh)
     @images.push(mesh)
-

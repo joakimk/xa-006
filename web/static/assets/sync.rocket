@@ -44,6 +44,7 @@
 			<key interpolation="0" row="180" value="-0.1"/>
 			<key interpolation="0" row="184" value="0.1"/>
 			<key interpolation="0" row="188" value="-0.1"/>
+			<key interpolation="0" row="192" value="-0.1"/>
 		</track>
 		<track name="grp1.rotation.y">
 			<key interpolation="0" row="0" value="0"/>
@@ -56,6 +57,7 @@
 			<key interpolation="0" row="152" value="0.1"/>
 			<key interpolation="0" row="156" value="-0.1"/>
 			<key interpolation="0" row="160" value="0"/>
+			<key interpolation="0" row="192" value="0"/>
 		</track>
 		<track name="grp1.rotation.z">
 			<key interpolation="1" row="0" value="0"/>
@@ -64,9 +66,16 @@
 			<key interpolation="1" row="72" value="3"/>
 			<key interpolation="1" row="96" value="0"/>
 			<key interpolation="0" row="120" value="3"/>
+			<key interpolation="0" row="192" value="0"/>
 		</track>
-		<track name="grp1.position.x"/>
-		<track name="grp1.position.y"/>
+		<track name="grp1.position.x">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="192" value="3.25"/>
+		</track>
+		<track name="grp1.position.y">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="192" value="1.15"/>
+		</track>
 		<track name="grp1.position.z">
 			<key interpolation="1" row="0" value="-15"/>
 			<key interpolation="1" row="24" value="1"/>
@@ -82,6 +91,7 @@
 			<key interpolation="1" row="104" value="1"/>
 			<key interpolation="1" row="108" value="-1"/>
 			<key interpolation="0" row="124" value="-7"/>
+			<key interpolation="0" row="192" value="-8"/>
 		</track>
 		<track name="activeSceneA">
 			<key interpolation="0" row="0" value="1"/>
