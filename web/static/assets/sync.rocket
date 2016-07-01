@@ -34,6 +34,13 @@
 			<key interpolation="1" row="248" value="2"/>
 			<key interpolation="0" row="256" value="0"/>
 		</track>
+		<track name="camera.z"/>
+		<track name="activeScenes"/>
+		<track name="activeSceneA">
+			<key interpolation="0" row="0" value="1"/>
+			<key interpolation="0" row="256" value="2"/>
+		</track>
+		<track name="activeSceneB"/>
 	</tracks>
 	<bookmarks/>
 </sync>
