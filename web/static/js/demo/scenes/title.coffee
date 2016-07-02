@@ -11,6 +11,11 @@ class @TitleScene
         y: 0
         z: 0
 
+    quickFix = =>
+      window.enableTitleScene = true
+
+    setTimeout quickFix, 3000
+
     @model = rootModel.labScene
     @resolution = rootModel.resolution
 
@@ -35,6 +40,8 @@ class @TitleScene
 
 
   render: (renderer) ->
+    return unless window.enableTitleScene
+
     @_renderImageGroup(group) for k, group of @animationGroup
     renderer.render @scene, @camera
 
@@ -111,7 +118,7 @@ class @TitleScene
     group = new THREE.Group()
     group.position.x = 160
     @group2.add(group)
-    identifier = window.textures.edison or "textures/edison2014logo.png"
+    identifier = window.textures.edison2014logo or "textures/edison2014logo.png"
     @images = []
     @_addImage(i, identifier, group) for i in [0..10]
     @animationGroup.edison = @images
