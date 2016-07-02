@@ -3,6 +3,12 @@ class @LabScene
     # Starting values, will be updated by "update" as the demo runs
     rootModel.labScene or=
       rotation:
+        x: 0
+        y: 0
+        z: 0
+      position:
+        x: 0
+        y: 0
         z: 0
 
     @model = rootModel.labScene
@@ -12,7 +18,13 @@ class @LabScene
     @_setUpScene()
 
   update: (sync) ->
+    @model.rotation.x = sync.rotation.x
+    @model.rotation.y = sync.rotation.y
     @model.rotation.z = sync.rotation.z
+
+    @model.position.x = sync.position.x
+    @model.position.y = sync.position.y
+    @model.position.z = sync.position.z
 
   render: (renderer) ->
     @index = 0
@@ -21,8 +33,12 @@ class @LabScene
 
   _renderImage: (image) ->
     @index -= 1
+    image.rotation.x = @model.rotation.x
+    image.rotation.y = @model.rotation.y
     image.rotation.z = @index * (Math.cos(@model.rotation.z) * 0.01)
     image.position.z = -@index * (0.03 * @model.rotation.z * 0.1)
+    image.position.x = @model.position.x
+    image.position.y = @model.position.y
     image.scale.set(1 + -(@index * 0.03) * @model.rotation.z * 0.5, 1 + -(@index * 0.03) * @model.rotation.z * 2.3, 1)
 
   _setUpCamera: ->

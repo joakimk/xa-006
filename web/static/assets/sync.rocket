@@ -1,5 +1,17 @@
 <sync rows="500">
 	<tracks>
+		<track name="position.x">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="256" value="0"/>
+		</track>
+		<track name="position.y">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="256" value="0"/>
+		</track>
+		<track name="position.z">
+			<key interpolation="0" row="0" value="0"/>
+			<key interpolation="0" row="256" value="0"/>
+		</track>
 		<track name="rotation.x">
 			<key interpolation="1" row="0" value="0"/>
 			<key interpolation="1" row="40" value="2"/>

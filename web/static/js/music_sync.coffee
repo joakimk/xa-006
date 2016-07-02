@@ -46,7 +46,7 @@ class @MusicSync
     device.on "update", (row) =>
       @row = row
       @audio.currentTime = @row / @row_rate
-      # @syncDevice.update(@row)      
+      # @syncDevice.update(@row)
       @data = @_getDataForCurrentRow()
 
     device.on "play",  => @audio.play()
@@ -71,6 +71,10 @@ class @MusicSync
     @tracks.rotationY = @syncDevice.getTrack("rotation.y")
     @tracks.rotationZ = @syncDevice.getTrack("rotation.z")
 
+    @tracks.positionX = @syncDevice.getTrack("position.x")
+    @tracks.positionY = @syncDevice.getTrack("position.y")
+    @tracks.positionZ = @syncDevice.getTrack("position.z")
+
     @tracks.group1RotationX = @syncDevice.getTrack("grp1.rotation.x")
     @tracks.group1RotationY = @syncDevice.getTrack("grp1.rotation.y")
     @tracks.group1RotationZ = @syncDevice.getTrack("grp1.rotation.z")
@@ -87,6 +91,10 @@ class @MusicSync
       x: @tracks.rotationX?.getValue(@row) or 0
       y: @tracks.rotationY?.getValue(@row) or 0
       z: @tracks.rotationZ?.getValue(@row) or 0
+    position:
+      x: @tracks.positionX?.getValue(@row) or 0
+      y: @tracks.positionY?.getValue(@row) or 0
+      z: @tracks.positionZ?.getValue(@row) or 0
     group1Rotation:
       x: @tracks.group1RotationX?.getValue(@row) or 0
       y: @tracks.group1RotationY?.getValue(@row) or 0
