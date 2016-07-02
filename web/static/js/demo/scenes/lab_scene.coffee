@@ -78,6 +78,7 @@ class @LabScene
 
     group = new THREE.Group()
     group.position.x = 80
+    group.position.y = 5
     @group1.add(group)
     identifier = window.textures.proudly or "textures/proudly.png"
     @images = []
