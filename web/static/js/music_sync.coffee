@@ -34,6 +34,7 @@ class @MusicSync
       @audio.src = window.musicData or "/music.ogg"
       @audio.load()
       @audio.preload = true
+      window.audio = @audio
 
       if @demoMode
         @audio.addEventListener "canplay", =>
@@ -46,11 +47,18 @@ class @MusicSync
     device.on "update", (row) =>
       @row = row
 
-      @audio.currentTime = @row / @row_rate
+      newTime = @row / @row_rate
+      oldTime = @audio.currentTime
+      @audio.currentTime = newTime
+      console.log(newTime: newTime, oldTime: oldTime, audio: audio)
       @data = @_getDataForCurrentRow()
 
-    device.on "play",  => @audio.play()
-    device.on "pause", => @audio.pause()
+    device.on "play",  =>
+      console.log("play")
+      @audio.play()
+    device.on "pause", =>
+      console.log("pause")
+      @audio.pause()
 
   update: ->
     @data = @_getDataForCurrentRow()
