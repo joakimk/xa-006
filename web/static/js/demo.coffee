@@ -2,6 +2,8 @@ class @Demo
   constructor: ->
     @codeVersionAtLoad = window.codeVersion
 
+    window.textures or= {}
+
     @_setUpModel()
     @_setUpRendering()
     @_setUpScenes()
