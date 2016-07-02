@@ -114,5 +114,4 @@ class @MusicSync
 
     activeScenes: [
       @tracks.activeSceneA?.getValue(@row) or 0
-      @tracks.activeSceneB?.getValue(@row) or 0
     ]
