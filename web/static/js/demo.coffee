@@ -46,6 +46,7 @@ class @Demo
       new IntroScene(@model)
       new LabScene(@model)
       new BackgroundScene(@model)
+      new AsciiScene(@model)
     ]
 
   _setUpRendering: ->
