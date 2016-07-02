@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <script>
+      <% encoded_data = Base.encode64(File.read!("web/static/assets/music.ogg")) %>
+      <% data = "data:audio/ogg;base64,#{encoded_data}" %>
+
+      window.musicData = "<%= data %>";
+    </script>
     <%= render @view_module, @view_template, assigns %>
     <script src="<%= static_path(@conn, "/js/deps.js") %>"></script>
     <script src="<%= static_path(@conn, "/js/live_update.js") %>"></script>
