@@ -7,14 +7,27 @@ defmodule Mix.Tasks.Release do
     Mix.shell.info "Compiling assets..."
     Mix.shell.cmd("node_modules/brunch/bin/brunch build")
 
-    Mix.shell.info "Downloading three.js..."
-    three_js_code = Application.get_env(:livecoding_workspace, :three_js_url) |> get
-
     code = File.read!("priv/static/js/deps.js") <>
            File.read!("priv/static/js/live_update.js")
 
     sync_data = data_uri("priv/static/sync.rocket", "application/xml")
     music_data = data_uri("priv/static/music.ogg", "audio/ogg")
+
+    { :ok, textures } = File.ls("priv/static/textures")
+    textures_data =
+      textures |>
+      Enum.map(fn (file) ->
+        path = "priv/static/textures/#{file}"
+        name = file |> String.replace(".png", "")
+
+        unless String.contains?(file, ".png") do
+          raise "unexpected file format"
+        end
+
+        data = data_uri(path, "image/png")
+        "window.textures.#{name} = '#{data}';"
+      end)
+      |> Enum.join
 
     page = """
     <!DOCTYPE html>
@@ -30,11 +43,10 @@ defmodule Mix.Tasks.Release do
       <body>
         <div id="js-container" />
         <script type="text/javascript">
-          #{three_js_code}
-        </script>
-        <script type="text/javascript">
           window.rocketXML = "#{sync_data}";
           window.musicData = "#{music_data}";
+          window.textures = {}
+          #{textures_data}
           #{code}
         </script>
 
