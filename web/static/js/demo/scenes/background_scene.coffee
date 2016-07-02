@@ -42,13 +42,15 @@ class @BackgroundScene
     distanceToLight1 = @_distance(square, @light1)
     distanceToLight2 = @_distance(square, @light2)
 
-    closestDistance =
+    # This was closest, but furthest looks much better
+    # and causes a nice flickering effect.
+    furthestDistance =
       if distanceToLight1 > distanceToLight2
         distanceToLight1
       else
         distanceToLight2
 
-    square.position.z = closestDistance * @distanceMultiplier
+    square.position.z = furthestDistance * @distanceMultiplier
     #console.log(closestDistance)
 
   _distance: (a, b) ->
