@@ -275,7 +275,29 @@
 			<key row="248" value="-0.1" interpolation="0"/>
 			<key row="256" value="0" interpolation="0"/>
 			<key row="768" value="-0.3" interpolation="0"/>
-			<key row="872" value="1" interpolation="0"/>
+			<key row="872" value="1" interpolation="1"/>
+			<key row="888" value="4" interpolation="1"/>
+			<key row="896" value="3" interpolation="1"/>
+			<key row="904" value="4" interpolation="0"/>
+			<key row="912" value="4" interpolation="1"/>
+			<key row="920" value="3" interpolation="1"/>
+			<key row="928" value="0" interpolation="1"/>
+			<key row="936" value="-1" interpolation="1"/>
+			<key row="944" value="-2" interpolation="1"/>
+			<key row="952" value="0" interpolation="1"/>
+			<key row="960" value="-2" interpolation="1"/>
+			<key row="968" value="-3" interpolation="1"/>
+			<key row="976" value="-3.2" interpolation="1"/>
+			<key row="984" value="-2" interpolation="1"/>
+			<key row="992" value="-1" interpolation="1"/>
+			<key row="1000" value="-1" interpolation="1"/>
+			<key row="1008" value="0" interpolation="1"/>
+			<key row="1016" value="1" interpolation="0"/>
+			<key row="1024" value="1" interpolation="1"/>
+			<key row="1048" value="4" interpolation="1"/>
+			<key row="1056" value="2" interpolation="1"/>
+			<key row="1072" value="4" interpolation="1"/>
+			<key row="1096" value="-0.2" interpolation="0"/>
 		</track>
 		<track name="grp1.rotation.y">
 			<key row="0" value="0" interpolation="0"/>
@@ -291,8 +313,35 @@
 			<key row="840" value="1" interpolation="1"/>
 			<key row="848" value="-1" interpolation="1"/>
 			<key row="856" value="-2" interpolation="1"/>
-			<key row="864" value="2" interpolation="0"/>
-			<key row="872" value="1" interpolation="0"/>
+			<key row="864" value="2" interpolation="1"/>
+			<key row="872" value="0" interpolation="1"/>
+			<key row="880" value="-2" interpolation="1"/>
+			<key row="888" value="-3" interpolation="1"/>
+			<key row="896" value="-4" interpolation="1"/>
+			<key row="904" value="-5" interpolation="1"/>
+			<key row="912" value="0" interpolation="1"/>
+			<key row="920" value="5" interpolation="1"/>
+			<key row="928" value="10" interpolation="1"/>
+			<key row="936" value="5" interpolation="1"/>
+			<key row="944" value="0" interpolation="1"/>
+			<key row="952" value="1" interpolation="1"/>
+			<key row="960" value="2" interpolation="1"/>
+			<key row="968" value="3" interpolation="1"/>
+			<key row="976" value="4" interpolation="1"/>
+			<key row="984" value="5" interpolation="1"/>
+			<key row="992" value="2" interpolation="1"/>
+			<key row="1000" value="1" interpolation="1"/>
+			<key row="1008" value="0" interpolation="1"/>
+			<key row="1016" value="-1" interpolation="1"/>
+			<key row="1024" value="1" interpolation="1"/>
+			<key row="1032" value="2" interpolation="0"/>
+			<key row="1036" value="3" interpolation="0"/>
+			<key row="1040" value="2" interpolation="0"/>
+			<key row="1044" value="3" interpolation="0"/>
+			<key row="1048" value="2" interpolation="1"/>
+			<key row="1052" value="3" interpolation="1"/>
+			<key row="1064" value="4" interpolation="1"/>
+			<key row="1096" value="0" interpolation="0"/>
 		</track>
 		<track name="grp1.rotation.z">
 			<key row="0" value="0" interpolation="1"/>
@@ -329,7 +378,23 @@
 			<key row="844" value="4" interpolation="1"/>
 			<key row="848" value="1" interpolation="1"/>
 			<key row="852" value="0" interpolation="1"/>
-			<key row="864" value="1" interpolation="0"/>
+			<key row="864" value="1" interpolation="1"/>
+			<key row="872" value="-1" interpolation="1"/>
+			<key row="880" value="-2" interpolation="1"/>
+			<key row="888" value="0" interpolation="1"/>
+			<key row="896" value="-2" interpolation="1"/>
+			<key row="904" value="0" interpolation="0"/>
+			<key row="936" value="0" interpolation="1"/>
+			<key row="944" value="-2" interpolation="0"/>
+			<key row="960" value="0" interpolation="0"/>
+			<key row="992" value="0" interpolation="1"/>
+			<key row="1008" value="1" interpolation="1"/>
+			<key row="1024" value="-1" interpolation="0"/>
+			<key row="1048" value="-1" interpolation="1"/>
+			<key row="1056" value="1" interpolation="1"/>
+			<key row="1064" value="3" interpolation="1"/>
+			<key row="1072" value="2" interpolation="1"/>
+			<key row="1096" value="2" interpolation="0"/>
 		</track>
 		<track name="grp1.position.x">
 			<key row="0" value="0" interpolation="0"/>
@@ -520,11 +585,18 @@
 			<key row="832" value="-0.4" interpolation="1"/>
 			<key row="840" value="-0.2" interpolation="1"/>
 			<key row="848" value="-0.6" interpolation="1"/>
+			<key row="872" value="-0.3" interpolation="0"/>
+			<key row="920" value="-0.3" interpolation="1"/>
+			<key row="928" value="-0.8" interpolation="1"/>
+			<key row="936" value="-0.2" interpolation="0"/>
 			<key row="976" value="-0.3" interpolation="1"/>
-			<key row="1056" value="4" interpolation="0"/>
-			<key row="1080" value="4" interpolation="1"/>
-			<key row="1192" value="2" interpolation="0"/>
-			<key row="1193" value="4" interpolation="0"/>
+			<key row="984" value="-0.4" interpolation="1"/>
+			<key row="1008" value="0" interpolation="1"/>
+			<key row="1024" value="-0.3" interpolation="1"/>
+			<key row="1072" value="-0.2" interpolation="1"/>
+			<key row="1096" value="0" interpolation="1"/>
+			<key row="1128" value="0" interpolation="1"/>
+			<key row="1192" value="1" interpolation="0"/>
 		</track>
 		<track name="activeSceneA">
 			<key row="0" value="1" interpolation="0"/>
@@ -534,8 +606,8 @@
 		<track name="activeSceneB">
 			<key row="0" value="1" interpolation="0"/>
 			<key row="976" value="1" interpolation="1"/>
-			<key row="1056" value="0" interpolation="0"/>
-			<key row="1080" value="0" interpolation="0"/>
+			<key row="1096" value="1" interpolation="1"/>
+			<key row="1192" value="0" interpolation="0"/>
 		</track>
 	</tracks>
 	<bookmarks/>
