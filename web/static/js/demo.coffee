@@ -44,7 +44,7 @@ class @Demo
   _setUpScenes: ->
     @scenes = [
       new IntroScene(@model)
-      new LabScene(@model)
+      new TitleScene(@model)
       new BackgroundScene(@model)
     ]
 

@@ -6,14 +6,20 @@
 			<key value="30" interpolation="1" row="347"/>
 			<key value="2" interpolation="0" row="350"/>
 			<key value="80" interpolation="0" row="384"/>
+			<key value="-80" interpolation="0" row="408"/>
+			<key value="-160" interpolation="0" row="512"/>
 		</track>
 		<track name="position.y">
 			<key value="0" interpolation="0" row="0"/>
 			<key value="-5" interpolation="0" row="256"/>
+			<key value="0" interpolation="1" row="408"/>
+			<key value="-3" interpolation="0" row="416"/>
 		</track>
 		<track name="position.z">
 			<key value="0" interpolation="0" row="0"/>
 			<key value="0" interpolation="0" row="256"/>
+			<key value="10" interpolation="1" row="408"/>
+			<key value="0" interpolation="0" row="416"/>
 		</track>
 		<track name="rotation.x">
 			<key value="0" interpolation="1" row="0"/>
@@ -98,7 +104,14 @@
 			<key value="0.5" interpolation="2" row="464"/>
 			<key value="0" interpolation="2" row="472"/>
 			<key value="0.5" interpolation="2" row="480"/>
-			<key value="0" interpolation="0" row="488"/>
+			<key value="0" interpolation="2" row="488"/>
+			<key value="0.5" interpolation="2" row="496"/>
+			<key value="0" interpolation="2" row="504"/>
+			<key value="0.5" interpolation="2" row="512"/>
+			<key value="0" interpolation="2" row="520"/>
+			<key value="0.5" interpolation="2" row="528"/>
+			<key value="0" interpolation="2" row="536"/>
+			<key value="0.5" interpolation="0" row="544"/>
 		</track>
 		<track name="grp1.rotation.x">
 			<key value="0" interpolation="0" row="0"/>
@@ -154,6 +167,7 @@
 			<key value="-82" interpolation="0" row="346"/>
 			<key value="-82" interpolation="0" row="352"/>
 			<key value="-160" interpolation="0" row="384"/>
+			<key value="80" interpolation="0" row="512"/>
 		</track>
 		<track name="grp1.position.y">
 			<key value="0" interpolation="0" row="0"/>
@@ -169,7 +183,8 @@
 			<key value="2.2" interpolation="3" row="248"/>
 			<key value="2.32" interpolation="0" row="255"/>
 			<key value="0" interpolation="0" row="256"/>
-			<key value="0" interpolation="0" row="384"/>
+			<key value="1" interpolation="1" row="384"/>
+			<key value="5" interpolation="0" row="392"/>
 		</track>
 		<track name="grp1.position.z">
 			<key value="-15" interpolation="1" row="0"/>

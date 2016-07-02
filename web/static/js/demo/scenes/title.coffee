@@ -1,4 +1,4 @@
-class @LabScene
+class @TitleScene
   constructor: (rootModel) ->
     # Starting values, will be updated by "update" as the demo runs
     rootModel.labScene or=
@@ -90,29 +90,32 @@ class @LabScene
     @group1.add(group)
     identifier = window.textures.title or "textures/title.png"
     @images = []
-    @_addImage(i, identifier, group) for i in [0..10]
+    @_addImage(i, identifier, group, 10, 5) for i in [0..10]
     @animationGroup.title = @images
 
     group = new THREE.Group()
     @group2.add(group)
     identifier = window.textures.presents or "textures/presents.png"
     @images = []
-    @_addImage(i, identifier, @group2) for i in [0..10]
+    @_addImage(i, identifier, group) for i in [0..10]
     @animationGroup.presents = @images
 
+    group = new THREE.Group()
+    group.position.x = 80
+    @group2.add(group)
+    identifier = window.textures.twoDays or "textures/twoDays.png"
+    @images = []
+    @_addImage(i, identifier, group, 10, 5) for i in [0..10]
+    @animationGroup.twoDays = @images
 
-  _buildMesh: (texture) ->
+  _buildMesh: (texture, width = 10, height = 10) ->
     textureLoader = new THREE.TextureLoader()
-    #texture = textureLoader.load window.textures.FairLight64px or "textures/FairLight64px.png"
-    #texture = textureLoader.load window.textures.FairLight or "textures/FairLight.png"
     texture = textureLoader.load texture
     material = new THREE.MeshPhongMaterial(color: 0xffffff, map: texture, transparent: true, opacity: 1)
-
-    geometry = new THREE.PlaneBufferGeometry(10, 10)
-
+    geometry = new THREE.PlaneBufferGeometry(width, height)
     mesh = new THREE.Mesh(geometry, material)
 
-  _addImage: (i, identifier, group) ->
-    mesh = @_buildMesh(identifier)
+  _addImage: (i, identifier, group, width, height) ->
+    mesh = @_buildMesh(identifier, width, height)
     group.add(mesh)
     @images.push(mesh)
