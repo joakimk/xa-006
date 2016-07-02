@@ -11,18 +11,20 @@ class @BackgroundScene
     @_setUpScene()
 
   update: (sync) ->
+    @group.rotation.z -= -0.01
+    @light1.position.x -= 0.01
+    @light1.position.y += 0.01
+    @light2.position.x += 0.01
+    @light2.position.y -= 0.01
+    @distanceMultiplier = 0.3
+    @camera.position.z = 10
+
     @blueCloud.update(@light1.position)
     @greenCloud.update(@light2.position)
 
     @_updateSquare(square) for square in @squares
 
   render: (renderer) ->
-    #@group.rotation.z -= -0.01
-    @light1.position.x -= 0.01
-    @light1.position.y += 0.01
-    @light2.position.x += 0.01
-    @light2.position.y -= 0.01
-
     @blueCloud.render()
     @greenCloud.render()
     renderer.render @scene, @camera
@@ -37,7 +39,7 @@ class @BackgroundScene
       else
         distanceToLight2
 
-    square.position.z = closestDistance * 0.3
+    square.position.z = closestDistance * @distanceMultiplier
     #console.log(closestDistance)
 
   _distance: (a, b) ->
