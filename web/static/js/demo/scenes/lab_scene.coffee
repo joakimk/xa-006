@@ -18,18 +18,29 @@ class @LabScene
     @_setUpScene()
 
   update: (sync) ->
-    @model.rotation.x = sync.rotation.x
-    @model.rotation.y = sync.rotation.y
     @model.rotation.z = sync.rotation.z
 
-    @model.position.x = sync.position.x
-    @model.position.y = sync.position.y
-    @model.position.z = sync.position.z
+    @group2.rotation.x = sync.rotation.x
+    @group2.rotation.y = sync.rotation.y
+    @group2.position.x = sync.position.x
+    @group2.position.y = sync.position.y
+    @group2.position.z = sync.position.z
+
+    @group1.rotation.x = sync.group1Rotation.x
+    @group1.rotation.y = sync.group1Rotation.y
+    @group1.rotation.z = sync.group1Rotation.z
+    @group1.position.x = sync.group1Position.x
+    @group1.position.y = sync.group1Position.y
+    @group1.position.z = sync.group1Position.z
+
 
   render: (renderer) ->
-    @index = 0
-    @_renderImage(image) for image in @images
+    @_renderImageGroup(group) for k, group of @animationGroup
     renderer.render @scene, @camera
+
+  _renderImageGroup: (imageGroup) ->
+    @index = 0
+    @_renderImage(image) for image in imageGroup
 
   _renderImage: (image) ->
     @index -= 1
@@ -43,24 +54,64 @@ class @LabScene
 
   _setUpCamera: ->
     @camera = new THREE.PerspectiveCamera(90, @resolution.aspectRatio, 1, 100)
-    @camera.position.z = 5
+    @camera.position.z = 10
+    # @camera.position.x = 80
 
   _setUpScene: ->
     @scene = new THREE.Scene()
     @scene.add(new THREE.AmbientLight(0xAAFF55))
 
-    @images = []
-    @_addImage(i) for i in [0..10]
+    @group1 = new THREE.Group()
+    @group2 = new THREE.Group()
+    # @group2.position.x = 120
+    # @group2.position.y = -10
+    @animationGroup = {}
+    @scene.add(@group1)
+    @scene.add(@group2)
 
-  _addImage: (i) ->
+    group = new THREE.Group()
+    @group1.add(group)
+    identifier = window.textures.xAngle2 or "textures/xAngle2.png"
+    @images = []
+    @_addImage(i, identifier, group) for i in [0..10]
+    @animationGroup.xAngleLogo = @images
+
+    group = new THREE.Group()
+    group.position.x = 80
+    @group1.add(group)
+    identifier = window.textures.proudly or "textures/proudly.png"
+    @images = []
+    @_addImage(i, identifier, group) for i in [0..10]
+    @animationGroup.proudly = @images
+
+    group = new THREE.Group()
+    group.position.x = 160
+    @group1.add(group)
+    identifier = window.textures.title or "textures/title.png"
+    @images = []
+    @_addImage(i, identifier, group) for i in [0..10]
+    @animationGroup.title = @images
+
+    group = new THREE.Group()
+    @group2.add(group)
+    identifier = window.textures.presents or "textures/presents.png"
+    @images = []
+    @_addImage(i, identifier, @group2) for i in [0..10]
+    @animationGroup.presents = @images
+
+
+  _buildMesh: (texture) ->
     textureLoader = new THREE.TextureLoader()
     #texture = textureLoader.load window.textures.FairLight64px or "textures/FairLight64px.png"
     #texture = textureLoader.load window.textures.FairLight or "textures/FairLight.png"
-    texture = textureLoader.load window.textures.xAngle2 or "textures/xAngle2.png"
+    texture = textureLoader.load texture
     material = new THREE.MeshPhongMaterial(color: 0xffffff, map: texture, transparent: true, opacity: 1)
 
     geometry = new THREE.PlaneBufferGeometry(10, 10)
 
     mesh = new THREE.Mesh(geometry, material)
-    @scene.add(mesh)
+
+  _addImage: (i, identifier, group) ->
+    mesh = @_buildMesh(identifier)
+    group.add(mesh)
     @images.push(mesh)
