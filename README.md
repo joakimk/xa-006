@@ -10,7 +10,7 @@ This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
 # Example
 
-[https://dl.dropboxusercontent.com/u/136929/xa-006-latest-version.html](See the latest version of the demo in your browser).
+[See the latest version of the demo in your browser](https://dl.dropboxusercontent.com/u/136929/xa-006-latest-version.html).
 
 # Development
 
