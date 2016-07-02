@@ -1,6 +1,10 @@
-# xa-006
+# xa-006: Quick fix
 
-A demo made using WebGL for Edison 2016.
+A demo made using WebGL (three.js) for Edison 2016.
+
+It's made using Google Chrome. May work in other browsers.
+
+Made under a short deadline with no need to create maintainable code :)
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
