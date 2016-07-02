@@ -38,6 +38,12 @@ class @TitleScene
     @group1.position.y = sync.group1Position.y
     @group1.position.z = sync.group1Position.z
 
+    # @light1.position.x = sync.group1Position.x + 3
+    # @light1.position.y = sync.group1Position.y + -3
+    # @light2.position.x = sync.group1Position.x + -3
+    # @light2.position.y = sync.group1Position.y + 3
+    # console.log(lightX: @light2.position.x, lightY: @light2.position.y, lightZ: @light2.position.z)
+    # console.log(grpX: @group1.position.x, grpY: @group1.position.y, grpZ: @group1.position.z)
 
   render: (renderer) ->
     return unless window.enableTitleScene
@@ -66,7 +72,16 @@ class @TitleScene
 
   _setUpScene: ->
     @scene = new THREE.Scene()
-    @scene.add(new THREE.AmbientLight(0xAAFF55))
+    # @light1 = new THREE.PointLight(0x00AA22, 1.2, 30)
+    @light1 = new THREE.PointLight(0x00AA22, 1, 30)
+    @light1.position.set(3, -3, 5)
+    # @light1 = new THREE.PointLight(0x00AA22, 30, 5)
+    @light2 = new THREE.PointLight(0xFF0000, 1, 30)
+    @light2.position.set(-3, 3, 5)
+
+    @scene.add(@light1)
+    @scene.add(@light2)
+    # @scene.add(new THREE.AmbientLight(0x44FF22))
 
     @group1 = new THREE.Group()
     @group2 = new THREE.Group()

@@ -24,18 +24,6 @@ class @BackgroundScene
     @distanceMultiplier = sync.group1Position.z
     @camera.position.z = sync.position.z
 
-    # original stuff
-    # @group.rotation.z -= -0.01
-    #
-    # @light1.position.x -= 0.01
-    # @light1.position.y += 0.01
-    #
-    # @light2.position.x += 0.01
-    # @light2.position.y -= 0.01
-    #
-    # @distanceMultiplier = 0.3
-    # @camera.position.z = 10
-
     @blueCloud.update(@light1.position)
     @greenCloud.update(@light2.position)
 
