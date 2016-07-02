@@ -44,7 +44,7 @@ Music by "Yirsi". https://soundcloud.com/yirsi/unknown-world.
 
 ## License
 
-Copyright (c) 2016 [Joakim Kolsjö](https://twitter.com/joakimk)
+Copyright (c) 2016 [Joakim Kolsjö](https://twitter.com/joakimk) and [Anders Asplund](https://github.com/danter)
 
 MIT License
 

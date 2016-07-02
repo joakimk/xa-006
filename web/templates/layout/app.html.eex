@@ -13,6 +13,7 @@
 
   <body>
     <script>
+      <% # we need the music data fully loaded to make play/pause/editing work in rocket, even with preload this does not seem to work with a URL in windows and sometimes not on mac %>
       <% encoded_data = Base.encode64(File.read!("web/static/assets/music.ogg")) %>
       <% data = "data:audio/ogg;base64,#{encoded_data}" %>
 
