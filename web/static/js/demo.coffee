@@ -86,4 +86,7 @@ class @Demo
 
   _isActive: (scene) ->
     sceneNumber = @scenes.indexOf(scene) + 1
-    @model.activeScenes.indexOf(sceneNumber) != -1
+    if window.location.href.indexOf("scene") != -1
+      sceneNumber == parseInt(window.location.href.split("scene=")[1])
+    else
+      @model.activeScenes.indexOf(sceneNumber) != -1
