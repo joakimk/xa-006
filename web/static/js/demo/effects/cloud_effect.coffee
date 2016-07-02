@@ -1,23 +1,61 @@
 class @CloudEffect
-  constructor: (@scene, @camera) ->
+  constructor: (@scene, @camera, @color) ->
+    @previousParticleCount = 300
     @_setUpScene()
 
-  update: (position) ->
+  update: (position, particleCount = @previousParticleCount) ->
     @mesh.position.x = position.x
     @mesh.position.y = position.y
     @mesh.position.z = position.z
 
+    if particleCount != @previousParticleCount
+      @_setParticleCount(@geometry, particleCount)
+
   render: ->
     time = performance.now() * 0.0005
     @material.uniforms.time.value = time
+
+    r = (@color & 0xFF0000) >> 16
+    g =  (@color & 0xFF00) >> 8
+    b = (@color & 0xFF)
+    @material.uniforms.r.value = r
+    @material.uniforms.g.value = g
+    @material.uniforms.b.value = b
+
     @mesh.rotation.x = time * 0.2
     @mesh.rotation.y = time * 0.4
 
   _setUpScene: ->
-    geometry = new THREE.InstancedBufferGeometry()
-    geometry.copy(new THREE.CircleBufferGeometry(1, 6))
+    @geometry = new THREE.InstancedBufferGeometry()
+    @geometry.copy(new THREE.CircleBufferGeometry(1, 6))
 
-    particleCount = 300
+    @_setParticleCount(@geometry, @previousParticleCount)
+
+    @material = new THREE.RawShaderMaterial(
+      uniforms:
+        map:
+          value: new THREE.TextureLoader().load(window.textures.xAngle2 or "textures/xAngle2.png")
+        r:
+          value: 1
+        g:
+          value: 1
+        b:
+          value: 1
+
+        time:
+          value: 0.0
+
+      vertexShader: Shaders.lab2Vert
+      fragmentShader: Shaders.lab2Frag
+      depthTest: true
+      depthWrite: true
+    )
+
+    @mesh = new THREE.Mesh(@geometry, @material)
+    @mesh.scale.set(0.2, 0.2, 0.2)
+    @scene.add(@mesh)
+
+  _setParticleCount: (geometry, particleCount) ->
     translateArray = new Float32Array(particleCount * 3)
 
     i = 0
@@ -32,19 +70,4 @@ class @CloudEffect
 
     geometry.addAttribute("translate", new THREE.InstancedBufferAttribute(translateArray, 3, 1))
 
-    @material = new THREE.RawShaderMaterial(
-      uniforms:
-        map:
-          value: new THREE.TextureLoader().load(window.textures.xAngle2 or "textures/xAngle2.png")
-        time:
-          value: 0.0
-
-      vertexShader: Shaders.lab2Vert
-      fragmentShader: Shaders.lab2Frag
-      depthTest: true
-      depthWrite: true
-    )
-
-    @mesh = new THREE.Mesh(geometry, @material)
-    @mesh.scale.set(0.2, 0.2, 0.2)
-    @scene.add(@mesh)
+    @previousParticleCount = particleCount

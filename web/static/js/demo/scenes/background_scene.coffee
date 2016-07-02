@@ -11,32 +11,58 @@ class @BackgroundScene
     @_setUpScene()
 
   update: (sync) ->
-    @cloud.update(@light1.position)
+    @group.rotation.z -= -0.01
+    @light1.position.x -= 0.01
+    @light1.position.y += 0.01
+    @light2.position.x += 0.01
+    @light2.position.y -= 0.01
+    @distanceMultiplier = 0.3
+    @camera.position.z = 10
+
+    @blueCloud.update(@light1.position)
+    @greenCloud.update(@light2.position)
+
+    @_updateSquare(square) for square in @squares
 
   render: (renderer) ->
-    #@group.rotation.z -= -0.01
-    #@light1.position.x -= 0.1
-    #@light1.position.y += 0.1
-    #@light2.position.x += 0.1
-    #@light2.position.y -= 0.1
-
-    @cloud.render()
+    @blueCloud.render()
+    @greenCloud.render()
     renderer.render @scene, @camera
+
+  _updateSquare: (square) ->
+    distanceToLight1 = @_distance(square, @light1)
+    distanceToLight2 = @_distance(square, @light2)
+
+    closestDistance =
+      if distanceToLight1 > distanceToLight2
+        distanceToLight1
+      else
+        distanceToLight2
+
+    square.position.z = closestDistance * @distanceMultiplier
+    #console.log(closestDistance)
+
+  _distance: (a, b) ->
+    xd = Math.abs(a.position.x - b.position.x)
+    yd = Math.abs(a.position.y - b.position.y)
+    zd = Math.abs(a.position.z - b.position.z)
+    Math.sqrt(xd * yd * zd)
 
   _setUpCamera: ->
     @camera = new THREE.PerspectiveCamera(90, @resolution.aspectRatio, 1, 100)
-    @camera.position.z = 5
+    @camera.position.z = 10
 
   _setUpScene: ->
     @scene = new THREE.Scene()
-    @cloud = new CloudEffect(@scene, @camera)
+    @blueCloud = new CloudEffect(@scene, @camera, 0x0000FF)
+    @greenCloud = new CloudEffect(@scene, @camera, 0x00FF00)
     #@scene.add(new THREE.AmbientLight(0x111111))
 
-    @light1 = new THREE.PointLight(0x0000FF, 3, 80)
-    @light1.position.set(1, 1, 1)
+    @light1 = new THREE.PointLight(0x0000FF, 5, 30)
+    @light1.position.set(1, 1, 2)
 
-    @light2 = new THREE.PointLight(0x00FF00, 1, 80)
-    @light2.position.set(-10, 5, 5)
+    @light2 = new THREE.PointLight(0x00FF00, 5, 30)
+    @light2.position.set(-5, 3, 2)
 
     @scene.add(@light1)
     @scene.add(@light2)
@@ -46,7 +72,7 @@ class @BackgroundScene
 
     @squares = []
     @group.rotation.x = -0.3
-    (@_addSquare(x, y, 0, 1) for x in [-20..20]) for y in [-2..20]
+    (@_addSquare(x, y, 0, 1) for x in [-20..20]) for y in [-20..20]
 
   _addSquare: (x, y, z, opacity) ->
     color = Math.abs(Math.sin(y) * Math.cos(x)) + 0.2

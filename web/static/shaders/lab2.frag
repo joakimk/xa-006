@@ -2,15 +2,18 @@
 
 precision highp float;
 uniform sampler2D map;
+uniform float r;
+uniform float g;
+uniform float b;
 varying vec2 vUv;
 varying float vScale;
 
 // HSL to RGB Convertion helpers
 vec3 HUEtoRGB(float H){
   H = mod(H,1.0);
-  float R = 0.0; //abs(H * 6.0 - 3.0) - 1.0;
-  float G = 0.0; //1.0 - abs(H * 6.0 - 2.0);
-  float B = 2.0 - abs(H * 6.0 - 4.0);
+  float R = r * (abs(H * 6.0 - 3.0) - 1.0);
+  float G = g * (1.0 - abs(H * 6.0 - 2.0));
+  float B = b * (2.0 - abs(H * 6.0 - 4.0));
   return clamp(vec3(R,G,B),0.0,1.0);
 }
 
