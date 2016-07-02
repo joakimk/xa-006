@@ -108,6 +108,22 @@ class @TitleScene
     @_addImage(i, identifier, group, 10, 5) for i in [0..10]
     @animationGroup.twoDays = @images
 
+    group = new THREE.Group()
+    group.position.x = 160
+    @group2.add(group)
+    identifier = window.textures.edison or "textures/edison2014logo.png"
+    @images = []
+    @_addImage(i, identifier, group) for i in [0..10]
+    @animationGroup.edison = @images
+
+    group = new THREE.Group()
+    group.position.x = 150
+    @group2.add(group)
+    identifier = window.textures.at or "textures/at.png"
+    @images = []
+    @_addImage(i, identifier, group) for i in [0..10]
+    @animationGroup.at = @images
+
   _buildMesh: (texture, width = 10, height = 10) ->
     textureLoader = new THREE.TextureLoader()
     texture = textureLoader.load texture
