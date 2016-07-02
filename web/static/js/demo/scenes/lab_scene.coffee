@@ -38,8 +38,8 @@ class @LabScene
 
   _addImage: (i) ->
     textureLoader = new THREE.TextureLoader()
-    #texture = textureLoader.load "window.textures.FairLight64px"
-    #texture = textureLoader.load "window.textures.FairLight"
+    #texture = textureLoader.load window.textures.FairLight64px
+    #texture = textureLoader.load window.textures.FairLight
     texture = textureLoader.load window.textures.xAngle2
     material = new THREE.MeshPhongMaterial(color: 0xffffff, map: texture, transparent: true, opacity: 1)
 
