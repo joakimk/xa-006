@@ -45,8 +45,8 @@ class @MusicSync
 
     device.on "update", (row) =>
       @row = row
+
       @audio.currentTime = @row / @row_rate
-      # @syncDevice.update(@row)
       @data = @_getDataForCurrentRow()
 
     device.on "play",  => @audio.play()
