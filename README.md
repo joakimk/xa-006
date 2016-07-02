@@ -8,6 +8,10 @@ Made under a short deadline with no need to create maintainable code :)
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
+# Example
+
+[See the latest version of the demo in your browser](https://dl.dropboxusercontent.com/u/136929/xa-006-latest-version.html).
+
 # Development
 
 ## Installing
