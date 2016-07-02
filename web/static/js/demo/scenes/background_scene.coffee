@@ -42,6 +42,10 @@ class @BackgroundScene
     @_updateSquare(square) for square in @squares
 
   render: (renderer) ->
+    # quickfix, end the demo
+    if window.audio.volume == 0
+      @camera.position.z = -1000000
+
     @blueCloud.render()
     @greenCloud.render()
     renderer.render @scene, @camera
