@@ -10,6 +10,8 @@ defmodule Mix.Tasks.Release do
     code = File.read!("priv/static/js/deps.js") <>
            File.read!("priv/static/js/live_update.js")
 
+    css = File.read!("priv/static/css/app.css")
+
     sync_data = data_uri("priv/static/sync.rocket", "application/xml")
     music_data = data_uri("priv/static/music.ogg", "audio/ogg")
 
@@ -38,23 +40,35 @@ defmodule Mix.Tasks.Release do
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>xa-006</title>
+        <style>
+        #{css}
+        </style>
       </head>
 
       <body>
-        <div id="js-container" />
+        <div id="js-container">
+          <h1 style="color: white">Set the browser to fullscreen mode, then press space to start the demo.</h1>
+        </div>
+
         <script type="text/javascript">
           window.rocketXML = "#{sync_data}";
           window.musicData = "#{music_data}";
-          window.textures = {}
+          window.textures = {};
+
+          document.body.onkeyup = function(e) {
+            if (e.keyCode === 32) {
+              e.preventDefault();
+
+              demo = new Demo();
+              element = demo.start();
+              container = document.getElementById("js-container");
+              container.innerHTML = "";
+              container.appendChild(element);
+            }
+          };
+
           #{textures_data}
           #{code}
-        </script>
-
-        <script type="text/javascript">
-          demo = new Demo();
-          element = demo.start();
-          container = document.getElementById("js-container")
-          container.appendChild(element)
         </script>
       </body>
     </html>

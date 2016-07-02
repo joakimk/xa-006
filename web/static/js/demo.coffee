@@ -77,6 +77,7 @@ class @Demo
 
   _update: ->
     sync = @musicSync.update()
+    window.audio.volume = sync.volume if window.audio
     @model.activeScenes = sync.activeScenes
 
     scene.update(sync) for scene in @scenes when @_isActive(scene)
