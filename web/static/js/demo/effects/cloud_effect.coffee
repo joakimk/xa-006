@@ -1,30 +1,23 @@
-class @ParticleScene
-  constructor: (rootModel) ->
-    @resolution = rootModel.resolution
-
-    @_setUpCamera()
+class @CloudEffect
+  constructor: (@scene, @camera) ->
     @_setUpScene()
 
-  update: (sync) ->
+  update: (position) ->
+    @mesh.position.x = position.x
+    @mesh.position.y = position.y
+    @mesh.position.z = position.z
 
-  render: (renderer) ->
+  render: ->
     time = performance.now() * 0.0005
     @material.uniforms.time.value = time
     @mesh.rotation.x = time * 0.2
     @mesh.rotation.y = time * 0.4
-    renderer.render @scene, @camera
-
-  _setUpCamera: ->
-    @camera = new THREE.PerspectiveCamera(50, @resolution.aspectRatio, 1, 5000)
-    @camera.position.z = 1400
 
   _setUpScene: ->
-    @scene = new THREE.Scene()
-
     geometry = new THREE.InstancedBufferGeometry()
     geometry.copy(new THREE.CircleBufferGeometry(1, 6))
 
-    particleCount = 500
+    particleCount = 300
     translateArray = new Float32Array(particleCount * 3)
 
     i = 0
@@ -53,6 +46,5 @@ class @ParticleScene
     )
 
     @mesh = new THREE.Mesh(geometry, @material)
-    @mesh.scale.set(500, 500, 500)
+    @mesh.scale.set(0.2, 0.2, 0.2)
     @scene.add(@mesh)
-
