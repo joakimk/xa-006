@@ -1,6 +1,6 @@
 class @CloudEffect
   constructor: (@scene, @camera, @color) ->
-    @previousParticleCount = 300
+    @previousParticleCount = 50
     @_setUpScene()
 
   update: (position, particleCount = @previousParticleCount) ->
@@ -52,7 +52,7 @@ class @CloudEffect
     )
 
     @mesh = new THREE.Mesh(@geometry, @material)
-    @mesh.scale.set(0.2, 0.2, 0.2)
+    @mesh.scale.set(0.5, 0.5, 0.5)
     @scene.add(@mesh)
 
   _setParticleCount: (geometry, particleCount) ->
