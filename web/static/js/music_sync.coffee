@@ -112,6 +112,7 @@ class @MusicSync
       y: @tracks.group1PositionY?.getValue(@row) or 0
       z: @tracks.group1PositionZ?.getValue(@row) or 0
 
+    volume: @tracks.activeSceneB?.getValue(@row) or 0
     activeScenes: [
       @tracks.activeSceneA?.getValue(@row) or 0
     ]
