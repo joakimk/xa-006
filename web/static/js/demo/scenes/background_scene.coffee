@@ -11,7 +11,8 @@ class @BackgroundScene
     @_setUpScene()
 
   update: (sync) ->
-    @cloud.update(@light1.position)
+    @blueCloud.update(@light1.position)
+    @greenCloud.update(@light2.position)
 
   render: (renderer) ->
     #@group.rotation.z -= -0.01
@@ -20,7 +21,8 @@ class @BackgroundScene
     #@light2.position.x += 0.1
     #@light2.position.y -= 0.1
 
-    @cloud.render()
+    @blueCloud.render()
+    @greenCloud.render()
     renderer.render @scene, @camera
 
   _setUpCamera: ->
@@ -29,14 +31,15 @@ class @BackgroundScene
 
   _setUpScene: ->
     @scene = new THREE.Scene()
-    @cloud = new CloudEffect(@scene, @camera)
+    @blueCloud = new CloudEffect(@scene, @camera, 0x0000FF)
+    @greenCloud = new CloudEffect(@scene, @camera, 0x00FF00)
     #@scene.add(new THREE.AmbientLight(0x111111))
 
-    @light1 = new THREE.PointLight(0x0000FF, 3, 80)
+    @light1 = new THREE.PointLight(0x0000FF, 5, 10)
     @light1.position.set(1, 1, 1)
 
-    @light2 = new THREE.PointLight(0x00FF00, 1, 80)
-    @light2.position.set(-10, 5, 5)
+    @light2 = new THREE.PointLight(0x00FF00, 5, 10)
+    @light2.position.set(-5, 3, 1)
 
     @scene.add(@light1)
     @scene.add(@light2)
