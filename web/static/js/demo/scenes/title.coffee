@@ -23,6 +23,8 @@ class @TitleScene
     @_setUpScene()
 
   update: (sync) ->
+    @grid.update(sync)
+
     @model.rotation.z = sync.rotation.z
 
     @group2.rotation.x = sync.rotation.x
@@ -48,6 +50,7 @@ class @TitleScene
   render: (renderer) ->
     return unless window.enableTitleScene
 
+    @grid.render()
     @_renderImageGroup(group) for k, group of @animationGroup
     renderer.render @scene, @camera
 
@@ -73,11 +76,13 @@ class @TitleScene
   _setUpScene: ->
     @scene = new THREE.Scene()
     # @light1 = new THREE.PointLight(0x00AA22, 1.2, 30)
-    @light1 = new THREE.PointLight(0x00AA22, 1, 30)
+    @light1 = new THREE.PointLight(0x00AA22, 2, 30)
     @light1.position.set(3, -3, 5)
     # @light1 = new THREE.PointLight(0x00AA22, 30, 5)
-    @light2 = new THREE.PointLight(0xFF0000, 1, 30)
+    @light2 = new THREE.PointLight(0xFF0000, 2, 30)
     @light2.position.set(-3, 3, 5)
+
+    @grid = new GridEffect(@scene, false)
 
     @scene.add(@light1)
     @scene.add(@light2)

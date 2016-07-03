@@ -1,5 +1,5 @@
 class @GridEffect
-  constructor: (@scene) ->
+  constructor: (@scene, lights = true) ->
     @group = new THREE.Group()
     @scene.add(@group)
     @squares = []
@@ -11,8 +11,9 @@ class @GridEffect
     @light2 = new THREE.PointLight(0x00FF00, 5, 30)
     @light2.position.set(-5, 3, 5)
 
-    @scene.add(@light1)
-    @scene.add(@light2)
+    if lights
+      @scene.add(@light1)
+      @scene.add(@light2)
 
   update: (sync) ->
     @light1.position.x = sync.group1Position.x
