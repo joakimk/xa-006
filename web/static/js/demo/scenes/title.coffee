@@ -23,7 +23,7 @@ class @TitleScene
     @_setUpScene()
 
   update: (sync) ->
-    @grid.update(sync)
+    @grid.update(sync, sync.rotation.z)
 
     @model.rotation.z = sync.rotation.z
 

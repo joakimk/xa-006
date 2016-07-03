@@ -15,7 +15,7 @@ class @GridEffect
       @scene.add(@light1)
       @scene.add(@light2)
 
-  update: (sync) ->
+  update: (sync, centerScaling = null) ->
     @light1.position.x = sync.group1Position.x
     @light1.position.y = sync.group1Position.y
 
@@ -27,7 +27,10 @@ class @GridEffect
     @group.rotation.z = sync.group1Rotation.z
     @distanceMultiplier = sync.group1Position.z
 
-    @_updateSquare(square) for square in @squares
+    if centerScaling
+      square.position.z = -(centerScaling / (Math.abs(square.position.x + 0.3) + Math.abs(square.position.y + 0.3))) for square in @squares
+    else
+      @_updateSquare(square) for square in @squares
 
   light1: ->
     @light1
