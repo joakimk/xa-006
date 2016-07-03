@@ -75,10 +75,10 @@ class @TitleScene
 
   _setUpScene: ->
     @scene = new THREE.Scene()
-    # @light1 = new THREE.PointLight(0x00AA22, 1.2, 30)
+
     @light1 = new THREE.PointLight(0x00AA22, 2, 30)
     @light1.position.set(6, -3, 5)
-    # @light1 = new THREE.PointLight(0x00AA22, 30, 5)
+
     @light2 = new THREE.PointLight(0xFF0000, 2, 30)
     @light2.position.set(-6, 3, 5)
 
@@ -101,7 +101,7 @@ class @TitleScene
     identifier = window.textures.xAngle or "textures/xAngle.png"
     @images = []
     @_addImage(i, identifier, group) for i in [0..10]
-    @animationGroup.xAngleLogo = @images
+    @animationGroup.xAngle = @images
 
     group = new THREE.Group()
     group.position.x = 80

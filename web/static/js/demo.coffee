@@ -46,6 +46,7 @@ class @Demo
       new IntroScene(@model)
       new TitleScene(@model)
       new BackgroundScene(@model)
+      new BackgroundSceneOutro(@model)
     ]
 
   _setUpRendering: ->
