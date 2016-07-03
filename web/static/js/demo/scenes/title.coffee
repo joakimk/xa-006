@@ -77,10 +77,10 @@ class @TitleScene
     @scene = new THREE.Scene()
     # @light1 = new THREE.PointLight(0x00AA22, 1.2, 30)
     @light1 = new THREE.PointLight(0x00AA22, 2, 30)
-    @light1.position.set(3, -3, 5)
+    @light1.position.set(6, -3, 5)
     # @light1 = new THREE.PointLight(0x00AA22, 30, 5)
     @light2 = new THREE.PointLight(0xFF0000, 2, 30)
-    @light2.position.set(-3, 3, 5)
+    @light2.position.set(-6, 3, 5)
 
     @grid = new GridEffect(@scene, false)
 

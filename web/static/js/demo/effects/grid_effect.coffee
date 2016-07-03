@@ -5,10 +5,10 @@ class @GridEffect
     @squares = []
     (@_addSquare(x, y, 0, 1) for x in [-20..20]) for y in [-20..20]
 
-    @light1 = new THREE.PointLight(0x0000FF, 5, 30)
+    @light1 = new THREE.PointLight(0x00AA22, 2, 30)
     @light1.position.set(1, 1, 5)
 
-    @light2 = new THREE.PointLight(0x00FF00, 5, 30)
+    @light2 = new THREE.PointLight(0xFF0000, 4, 30)
     @light2.position.set(-5, 3, 5)
 
     if lights

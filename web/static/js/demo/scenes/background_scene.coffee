@@ -34,8 +34,8 @@ class @BackgroundScene
 
   _setUpScene: ->
     @scene = new THREE.Scene()
-    @blueCloud = new CloudEffect(@scene, @camera, 0x0000FF)
-    @greenCloud = new CloudEffect(@scene, @camera, 0x00FF00)
+    @blueCloud = new CloudEffect(@scene, @camera, 0x00FF00)
+    @greenCloud = new CloudEffect(@scene, @camera, 0xFF0000)
     #@scene.add(new THREE.AmbientLight(0x111111))
 
     @grid = new GridEffect(@scene)
