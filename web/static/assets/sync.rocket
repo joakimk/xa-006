@@ -293,6 +293,10 @@
 			<key row="1536" value="0.5" interpolation="1"/>
 			<key row="1543" value="0.6" interpolation="0"/>
 			<key row="1544" value="0" interpolation="0"/>
+			<key row="1904" value="3" interpolation="1"/>
+			<key row="1919" value="0.5" interpolation="0"/>
+			<key row="2008" value="0.5" interpolation="1"/>
+			<key row="2016" value="5" interpolation="0"/>
 		</track>
 		<track name="rotation.y">
 			<key row="0" value="0" interpolation="0"/>
@@ -370,6 +374,8 @@
 			<key row="1536" value="3" interpolation="1"/>
 			<key row="1540" value="1" interpolation="1"/>
 			<key row="1544" value="0" interpolation="0"/>
+			<key row="2008" value="0" interpolation="1"/>
+			<key row="2016" value="-2" interpolation="0"/>
 		</track>
 		<track name="rotation.z">
 			<key row="0" value="0" interpolation="0"/>
@@ -438,7 +444,11 @@
 			<key row="760" value="0" interpolation="2"/>
 			<key row="768" value="0" interpolation="0"/>
 			<key row="1288" value="0" interpolation="0"/>
-			<key row="1544" value="0" interpolation="0"/>
+			<key row="1544" value="10" interpolation="0"/>
+			<key row="1904" value="10" interpolation="1"/>
+			<key row="1919" value="7.2" interpolation="0"/>
+			<key row="2008" value="7.2" interpolation="1"/>
+			<key row="2016" value="10" interpolation="0"/>
 		</track>
 		<track name="grp1.rotation.x">
 			<key row="0" value="0" interpolation="0"/>
