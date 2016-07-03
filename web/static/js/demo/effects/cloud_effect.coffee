@@ -34,7 +34,7 @@ class @CloudEffect
     @material = new THREE.RawShaderMaterial(
       uniforms:
         map:
-          value: new THREE.TextureLoader().load(window.textures.xAngle2 or "textures/xAngle2.png")
+          value: new THREE.TextureLoader().load(window.textures.xAngle or "textures/xAngle.png")
         r:
           value: 1
         g:

@@ -98,7 +98,7 @@ class @TitleScene
 
     group = new THREE.Group()
     @group1.add(group)
-    identifier = window.textures.xAngle2 or "textures/xAngle2.png"
+    identifier = window.textures.xAngle or "textures/xAngle.png"
     @images = []
     @_addImage(i, identifier, group) for i in [0..10]
     @animationGroup.xAngleLogo = @images
