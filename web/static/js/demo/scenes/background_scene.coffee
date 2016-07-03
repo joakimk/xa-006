@@ -70,10 +70,10 @@ class @BackgroundScene
     #@scene.add(new THREE.AmbientLight(0x111111))
 
     @light1 = new THREE.PointLight(0x0000FF, 5, 30)
-    @light1.position.set(1, 1, 2)
+    @light1.position.set(1, 1, 5)
 
     @light2 = new THREE.PointLight(0x00FF00, 5, 30)
-    @light2.position.set(-5, 3, 2)
+    @light2.position.set(-5, 3, 5)
 
     @scene.add(@light1)
     @scene.add(@light2)
