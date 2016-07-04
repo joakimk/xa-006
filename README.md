@@ -14,7 +14,7 @@ This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
 ## Preview
 
-![](http://content.pouet.net/files/screenshots/00067/00067689.jpg)
+![](https://dl.dropboxusercontent.com/u/65616109/quickfix-merged-scr.png)
 
 ## Comments
 
