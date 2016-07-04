@@ -4,6 +4,10 @@ A demo made using WebGL (three.js) for Edison 2016.
 
 [See the latest version of the demo in your browser](https://dl.dropboxusercontent.com/u/136929/xa-006-latest-version.html).
 
+See comments and reviews on [pouet.net](http://www.pouet.net/prod.php?which=67689).
+
+![](https://dl.dropboxusercontent.com/u/65616109/quickfix-merged-scr.png)
+
 ## About
 
 It's made using Google Chrome. May work in other browsers.
@@ -11,14 +15,6 @@ It's made using Google Chrome. May work in other browsers.
 Made under a short deadline with no need to create maintainable code :)
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
-
-## Preview
-
-![](https://dl.dropboxusercontent.com/u/65616109/quickfix-merged-scr.png)
-
-## Comments
-
-See [pouet.net](http://www.pouet.net/prod.php?which=67689).
 
 # Development
 
