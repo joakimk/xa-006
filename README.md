@@ -12,6 +12,14 @@ Made under a short deadline with no need to create maintainable code :)
 
 This is a project based on <https://github.com/joakimk/livecoding_workspace>.
 
+## Preview
+
+![](http://content.pouet.net/files/screenshots/00067/00067689.jpg)
+
+## Comments
+
+See [pouet.net](http://www.pouet.net/prod.php?which=67689).
+
 # Development
 
 ## Installing
