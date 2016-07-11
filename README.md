@@ -32,7 +32,6 @@ Start the server
     mix phoenix.server
 
 0. Visit <http://localhost:4000>
-  0. If you get a "no process" error in the console, reload the page once.
 0. Then edit [web/static/js/demo.coffee](web/static/js/demo.coffee) and see the changes appear in the browser right away.
 
 ## Editing the music sync

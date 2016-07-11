@@ -4,6 +4,7 @@ defmodule LivecodingWorkspace.HotCodeUpdateChannel do
   @env Mix.env
   def join(_channel, _message, socket) do
     if @env == :dev do
+      Application.ensure_started(:fs)
       :fs.subscribe()
     end
 
