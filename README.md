@@ -2,7 +2,7 @@
 
 A demo made using WebGL (three.js) for Edison 2016.
 
-[See the latest version of the demo in your browser](https://dl.dropboxusercontent.com/u/136929/xa-006-latest-version.html).
+[See the latest version of the demo in your browser](https://rawgit.com/joakimk/xa-006/master/releases/xa-006/xa-006-final-version.html).
 
 See comments and reviews on [pouet.net](http://www.pouet.net/prod.php?which=67689).
 
